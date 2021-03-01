@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import XMLParsing
 
 protocol NetworkManager {
     
     static var session: URLSession { get }
-    static var decoder: JSONDecoder { get }
-    static var encoder: JSONEncoder { get }
+    static var decoder: XMLDecoder { get }
+    static var encoder: XMLEncoder { get }
     
     func request<T>(_ request: URLRequest,
                     completion: @escaping (Result<T, Error>) -> Void) -> NetworkCancellable where T: Decodable
@@ -33,16 +34,17 @@ final class DefaultNetworkManager: NetworkManager {
         return URLSession(configuration: config)
     }
     
-    static var decoder: JSONDecoder {
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
+    static var decoder: XMLDecoder = {
+        let decoder = XMLDecoder()
+        decoder.dateDecodingStrategy = .iso8601
         return decoder
-    }
+    }()
     
-    static var encoder: JSONEncoder {
-        let encoder = JSONEncoder()
+    static var encoder: XMLEncoder = {
+        let encoder = XMLEncoder()
+        encoder.dateEncodingStrategy = .iso8601
         return encoder
-    }
+    }()
     
     func request<T>(_ request: URLRequest, completion: @escaping (Result<T, Error>) -> Void) -> NetworkCancellable where T: Decodable {
         let dataTask = DefaultNetworkManager.session.dataTask(with: request) { data, response, error in
