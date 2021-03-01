@@ -14,7 +14,8 @@ struct MainSceneViewModelCallbacks {
 }
 
 protocol MainSceneViewModelable {
-    func getAllStations(_ completion: @escaping GetAllStationsType) -> NetworkCancellable?
+    func getAllStations(_ request: GetAllStationsRequest,
+                        _ completion: @escaping GetAllStationsType) -> NetworkCancellable?
     func didSelectItem(_ id: String)
 }
 
@@ -35,8 +36,8 @@ class MainSceneViewModel: MainSceneViewModelable, ItemCellViewModelParent {
     
     // MARK: - Public API -
     
-    func getAllStations(_ completion: @escaping GetAllStationsType) -> NetworkCancellable? {
-        getAllStationsUseCase.execute(nil, completion)
+    func getAllStations(_ request: GetAllStationsRequest, _ completion: @escaping GetAllStationsType) -> NetworkCancellable? {
+        getAllStationsUseCase.execute(request, completion)
     }
     
     func didSelectItem(_ id: String) {

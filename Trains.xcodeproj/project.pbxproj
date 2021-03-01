@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -34,6 +34,7 @@
 		9F8EE5AA25ED1F8F005D4FBF /* StationsCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE5A925ED1F8F005D4FBF /* StationsCollection.swift */; };
 		9F8EE5AD25ED1F98005D4FBF /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE5AC25ED1F98005D4FBF /* Station.swift */; };
 		9F8EE5B425ED26B4005D4FBF /* GetAllStationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE5B325ED26B4005D4FBF /* GetAllStationsRepository.swift */; };
+		9F8EE5C025ED62ED005D4FBF /* GetAllStationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE5BF25ED62ED005D4FBF /* GetAllStationsRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		9F8EE5A925ED1F8F005D4FBF /* StationsCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsCollection.swift; sourceTree = "<group>"; };
 		9F8EE5AC25ED1F98005D4FBF /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		9F8EE5B325ED26B4005D4FBF /* GetAllStationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllStationsRepository.swift; sourceTree = "<group>"; };
+		9F8EE5BF25ED62ED005D4FBF /* GetAllStationsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllStationsRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +268,7 @@
 		9F8EE57025EABCBD005D4FBF /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				9F8EE5BE25ED62DC005D4FBF /* Requests */,
 				9F8EE57625EABD1E005D4FBF /* UseCases */,
 				9F8EE57825EABD39005D4FBF /* Models */,
 				9F8EE57725EABD2D005D4FBF /* Constants */,
@@ -350,13 +353,20 @@
 			path = Train;
 			sourceTree = "<group>";
 		};
+		9F8EE5BE25ED62DC005D4FBF /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				9F8EE5BF25ED62ED005D4FBF /* GetAllStationsRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
 		D84E795F9F4670B07A8423DC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				72F4910E5F7B923AC23659CB /* Pods-Trains.debug.xcconfig */,
 				631DAE4B44D7DC24B2885A68 /* Pods-Trains.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -498,6 +508,7 @@
 				9F8EE5AA25ED1F8F005D4FBF /* StationsCollection.swift in Sources */,
 				9F8EE55825EAB9CD005D4FBF /* AppInitialiser.swift in Sources */,
 				9F8EE5A725ED1F15005D4FBF /* GetAllStations.swift in Sources */,
+				9F8EE5C025ED62ED005D4FBF /* GetAllStationsRequest.swift in Sources */,
 				9F8EE57B25EABD7C005D4FBF /* UseCase.swift in Sources */,
 				9F57829025EA31E400405E5E /* AppDelegate.swift in Sources */,
 				9F8EE55525EAB957005D4FBF /* AppDIContainer.swift in Sources */,

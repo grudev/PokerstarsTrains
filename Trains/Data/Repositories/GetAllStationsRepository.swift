@@ -12,7 +12,7 @@ typealias GetAllStationsResultType = (Result<GetAllStationsDataType, Error>) -> 
 
 protocol GetAllStationsRepository {
     init(_ networkManager: NetworkManager)
-    func getAllStations(_ completion: @escaping GetAllStationsResultType) -> NetworkCancellable?
+    func getAllStations(_ request: GetAllStationsRequest, _ completion: @escaping GetAllStationsResultType) -> NetworkCancellable?
 }
 
 final class NetworkGetAllStationsRepository: GetAllStationsRepository {
@@ -23,9 +23,9 @@ final class NetworkGetAllStationsRepository: GetAllStationsRepository {
         self.networkManager = networkManager
     }
     
-    func getAllStations(_ completion: @escaping GetAllStationsResultType) -> NetworkCancellable? {
+    func getAllStations(_ request: GetAllStationsRequest, _ completion: @escaping GetAllStationsResultType) -> NetworkCancellable? {
         do {
-            let request = try APIRouter.getAllStations(type: nil).asURLRequest()
+            let request = try APIRouter.getAllStations(request: request).asURLRequest()
             let cancelable = networkManager.request(request, completion: completion)
             return cancelable
         } catch {

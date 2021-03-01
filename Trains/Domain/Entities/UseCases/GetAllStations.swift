@@ -10,7 +10,7 @@ import Foundation
 final class GetAllStations: UseCase {
 
     typealias Response = StationsCollection
-    typealias Request = Void
+    typealias Request = GetAllStationsRequest
     
     private let repository: GetAllStationsRepository
     
@@ -18,9 +18,9 @@ final class GetAllStations: UseCase {
         self.repository = repository
     }
     
-    func execute(_ request: Request?,
+    func execute(_ request: Request,
                  _ completion: @escaping (_ result: Result<Response, Error>) -> Void) -> NetworkCancellable? {
-        repository.getAllStations(completion)
+        repository.getAllStations(request, completion)
     }
     
 }

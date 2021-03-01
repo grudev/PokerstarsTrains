@@ -47,7 +47,7 @@ class MainSceneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        requestData()
+        requestStations(for: nil)
     }
     
 }
@@ -70,8 +70,9 @@ private extension MainSceneViewController {
         ])
     }
     
-    func requestData() {
-        dataCancellable = viewModel.getAllStations { result in
+    func requestStations(for type: StationType?) {
+        let request = GetAllStationsRequest(type: type)
+        dataCancellable = viewModel.getAllStations(request) { result in
             switch result {
             case .success(let data):
                 print("SUCCESS \(data)")

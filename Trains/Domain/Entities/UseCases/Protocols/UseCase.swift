@@ -12,6 +12,6 @@ protocol UseCase {
     associatedtype Response
     associatedtype Request
     
-    func execute(_ request: Request?, _ completion: @escaping (_ result: Result<Response, Error>) -> Void) -> NetworkCancellable?
+    func execute(_ request: Request, _ completion: @escaping (_ result: Result<Response, Error>) -> Void) -> NetworkCancellable?
     
 }
