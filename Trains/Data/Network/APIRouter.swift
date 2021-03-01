@@ -14,7 +14,7 @@ enum APIRouter {
     // MARK: - Endpoints -
     
     case getAllStations(request: GetAllStationsRequest)
-    case getCurrentTrains(type: TrainType?)
+    case getCurrentTrains(request: GetCurrentTrainsRequest)
     case getStationDataByName(name: String, minutes: Int?)
     case getStationDataByCode(code: String, minutes: Int?)
     case getStationsFilter(filter: String)
@@ -64,8 +64,8 @@ private extension APIRouter {
                 return "getAllStationsXML"
             }
             return "getAllStationsXML_WithStationType"
-        case .getCurrentTrains(let type):
-            guard let _ = type else {
+        case .getCurrentTrains(let request):
+            guard let _ = request.type else {
                 return "getCurrentTrainsXML"
             }
             return "getCurrentTrainsXML_WithTrainType"
@@ -91,10 +91,10 @@ private extension APIRouter {
             guard let type = request.type else { return nil }
             return ["StationType": type.rawValue]
             
-        case .getCurrentTrains(let type):
+        case .getCurrentTrains(let request):
             
-            guard let _type = type else { return nil }
-            return ["TrainType": _type.rawValue]
+            guard let type = request.type else { return nil }
+            return ["TrainType": type.rawValue]
             
         case .getStationDataByName(let name, let minutes):
             

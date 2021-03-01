@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Station: Codable {
+struct Station: Decodable {
     
     var id: Int
     var description: String

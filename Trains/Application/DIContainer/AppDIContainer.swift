@@ -20,7 +20,11 @@ final class AppDIContainer {
 extension AppDIContainer: MainCoordinatorDIContainer {
     
     func makeMainSceneViewModel(_ callbacks: MainSceneViewModelCallbacks) -> MainSceneViewModelable {
-        MainSceneViewModel(callbacks, makeGetAllStationsUseCase())
+        MainSceneViewModel(
+            callbacks,
+            makeGetAllStationsUseCase(),
+            makeGetCurrentTrainsUseCase()
+        )
     }
     
     func makeMainSceneViewController(_ viewModel: MainSceneViewModelable) -> MainSceneViewController {
@@ -33,8 +37,12 @@ extension AppDIContainer: MainCoordinatorDIContainer {
 
 private extension AppDIContainer {
     
-    func makeGetAllStationsUseCase() -> GetAllStations {
-        GetAllStations(makeGetAllStationsRepository())
+    func makeGetAllStationsUseCase() -> GetAllStationsUseCase {
+        GetAllStationsUseCase(makeGetAllStationsRepository())
+    }
+    
+    func makeGetCurrentTrainsUseCase() -> GetCurrentTrainsUseCase {
+        GetCurrentTrainsUseCase(makeGetCurrentTrainsRepository())
     }
 
 }
@@ -45,6 +53,10 @@ private extension AppDIContainer {
     
     func makeGetAllStationsRepository() -> GetAllStationsRepository {
         NetworkGetAllStationsRepository(networkManager)
+    }
+    
+    func makeGetCurrentTrainsRepository() -> GetCurrentTrainsRepository {
+        NetworkGetCurrentTrainsRepository(networkManager)
     }
     
 }

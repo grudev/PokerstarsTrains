@@ -1,5 +1,5 @@
 //
-//  GetAllStations.swift
+//  GetAllStationsUseCase.swift
 //  Trains
 //
 //  Created by Dimitar Grudev on 1.03.21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class GetAllStations: UseCase {
+final class GetAllStationsUseCase: UseCase {
 
     typealias Response = StationsCollection
     typealias Request = GetAllStationsRequest

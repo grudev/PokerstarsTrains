@@ -29,7 +29,8 @@ class MainSceneViewController: UIViewController {
     
     private var viewModel: MainSceneViewModelable!
     private var styles: MainSceneStylable!
-    private var dataCancellable: NetworkCancellable?
+    private var stationsCancellable: NetworkCancellable?
+    private var trainsCancellable: NetworkCancellable?
     
     // MARK: - ViewController Lifecycle -
     
@@ -47,7 +48,8 @@ class MainSceneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        requestStations(for: nil)
+//        requestStations(for: nil)
+        requestCurrentTraint(for: nil)
     }
     
 }
@@ -72,7 +74,21 @@ private extension MainSceneViewController {
     
     func requestStations(for type: StationType?) {
         let request = GetAllStationsRequest(type: type)
-        dataCancellable = viewModel.getAllStations(request) { result in
+        stationsCancellable = viewModel.getAllStations(request) { result in
+            switch result {
+            case .success(let data):
+//                print("SUCCESS \(data)")
+            break
+            case .failure(let error):
+//                print("ERROR \(error)")
+            break
+            }
+        }
+    }
+    
+    func requestCurrentTraint(for type: TrainType?) {
+        let request = GetCurrentTrainsRequest(type: type)
+        trainsCancellable = viewModel.getCurrentTrains(request) { result in
             switch result {
             case .success(let data):
                 print("SUCCESS \(data)")
