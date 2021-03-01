@@ -8,5 +8,13 @@
 import Foundation
 
 struct StationsCollection: Codable {
+    
     var stations: [Station]
+    
+    // MARK: - Custom Coding Keys -
+    
+    enum CodingKeys: String, CodingKey {
+        case stations = "objStation"
+    }
+    
 }

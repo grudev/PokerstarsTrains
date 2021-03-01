@@ -74,9 +74,9 @@ private extension MainSceneViewController {
         dataCancellable = viewModel.getAllStations { result in
             switch result {
             case .success(let data):
-                break
+                print("SUCCESS \(data)")
             case .failure(let error):
-                break
+                print("ERROR \(error)")
             }
         }
     }
