@@ -15,4 +15,5 @@ public extension Identifiable {
     static var uniqueIdentifier: String { String(describing: self) }
 }
 
+extension UITableViewCell: Identifiable { }
 extension UICollectionViewCell: Identifiable { }
