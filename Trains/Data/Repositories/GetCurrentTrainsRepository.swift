@@ -7,8 +7,7 @@
 
 import Foundation
 
-typealias GetCurrentTrainsDataType = CurrentTrainsCollection
-typealias GetCurrentTrainsResultType = (Result<GetCurrentTrainsDataType, Error>) -> Void
+typealias GetCurrentTrainsResultType = (Result<CurrentTrainsCollection, Error>) -> Void
 
 protocol GetCurrentTrainsRepository {
     init(_ networkManager: NetworkManager)

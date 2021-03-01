@@ -31,6 +31,8 @@ class MainSceneViewController: UIViewController {
     private var styles: MainSceneStylable!
     private var stationsCancellable: NetworkCancellable?
     private var trainsCancellable: NetworkCancellable?
+    private var stationDataByNameCancelable: NetworkCancellable?
+    private var stationDataByCodeCancelable: NetworkCancellable?
     
     // MARK: - ViewController Lifecycle -
     
@@ -49,7 +51,9 @@ class MainSceneViewController: UIViewController {
         super.viewDidLoad()
         setup()
 //        requestStations(for: nil)
-        requestCurrentTraint(for: nil)
+//        requestCurrentTraint(for: nil)
+//        requestStationDataByName("Bayside", minutes: 90)
+//        requestStationDataByCode("mhide", minutes: 20)
     }
     
 }
@@ -89,6 +93,30 @@ private extension MainSceneViewController {
     func requestCurrentTraint(for type: TrainType?) {
         let request = GetCurrentTrainsRequest(type: type)
         trainsCancellable = viewModel.getCurrentTrains(request) { result in
+            switch result {
+            case .success(let data):
+                print("SUCCESS \(data)")
+            case .failure(let error):
+                print("ERROR \(error)")
+            }
+        }
+    }
+    
+    func requestStationDataByName(_ name: String, minutes: Int?) {
+        let request = GetStationDataByNameRequest(name: name, minutes: minutes)
+        stationDataByNameCancelable = viewModel.getStationDataByName(request) { (result) in
+            switch result {
+            case .success(let data):
+                print("SUCCESS \(data)")
+            case .failure(let error):
+                print("ERROR \(error)")
+            }
+        }
+    }
+    
+    func requestStationDataByCode(_ code: String, minutes: Int?) {
+        let request = GetStationDataByCodeRequest(code: code, minutes: minutes)
+        stationDataByCodeCancelable = viewModel.getStationDataByCode(request) { (result) in
             switch result {
             case .success(let data):
                 print("SUCCESS \(data)")

@@ -23,7 +23,9 @@ extension AppDIContainer: MainCoordinatorDIContainer {
         MainSceneViewModel(
             callbacks,
             makeGetAllStationsUseCase(),
-            makeGetCurrentTrainsUseCase()
+            makeGetCurrentTrainsUseCase(),
+            makeGetStationDataByNameUseCase(),
+            makeGetStationDataByCodeUseCase()
         )
     }
     
@@ -44,6 +46,14 @@ private extension AppDIContainer {
     func makeGetCurrentTrainsUseCase() -> GetCurrentTrainsUseCase {
         GetCurrentTrainsUseCase(makeGetCurrentTrainsRepository())
     }
+    
+    func makeGetStationDataByNameUseCase() -> GetStationDataByNameUseCase {
+        GetStationDataByNameUseCase(makeGetStationDataByNameRepository())
+    }
+    
+    func makeGetStationDataByCodeUseCase() -> GetStationDataByCodeUseCase {
+        GetStationDataByCodeUseCase(makeGetStationDataByCodeRepository())
+    }
 
 }
 
@@ -57,6 +67,14 @@ private extension AppDIContainer {
     
     func makeGetCurrentTrainsRepository() -> GetCurrentTrainsRepository {
         NetworkGetCurrentTrainsRepository(networkManager)
+    }
+    
+    func makeGetStationDataByNameRepository() -> GetStationDataByNameRepository {
+        NetworkGetStationDataByNameRepository(networkManager)
+    }
+    
+    func makeGetStationDataByCodeRepository() -> GetStationDataByCodeRepository {
+        NetworkGetStationDataByCodeRepository(networkManager)
     }
     
 }

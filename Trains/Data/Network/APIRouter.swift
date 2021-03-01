@@ -101,12 +101,14 @@ private extension APIRouter {
             var params: [String: String] = ["StationDesc": name]
             guard let _minutes = minutes else { return params }
             params.updateValue("\(_minutes)", forKey: "NumMins")
+            return params
             
         case .getStationDataByCode(let code, let minutes):
             
             var params: [String: String] = ["StationCode": code]
             guard let _minutes = minutes else { return params }
             params.updateValue("\(_minutes)", forKey: "NumMins")
+            return params
             
         case .getStationsFilter(let filter):
             
@@ -119,7 +121,6 @@ private extension APIRouter {
             return params
             
         }
-        return nil
     }
     
     func addDefaultHeaders(_ request: inout URLRequest) {

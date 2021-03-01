@@ -7,8 +7,7 @@
 
 import Foundation
 
-typealias GetAllStationsDataType = StationsCollection
-typealias GetAllStationsResultType = (Result<GetAllStationsDataType, Error>) -> Void
+typealias GetAllStationsResultType = (Result<StationsCollection, Error>) -> Void
 
 protocol GetAllStationsRepository {
     init(_ networkManager: NetworkManager)
