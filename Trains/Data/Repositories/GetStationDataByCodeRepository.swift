@@ -12,7 +12,7 @@ typealias GetStationDataByCodeResultType = (Result<StationDataCollection, Error>
 protocol GetStationDataByCodeRepository {
     init(_ networkManager: NetworkManager)
     func getStationData(_ request: GetStationDataByCodeRequest,
-                          _ completion: @escaping GetStationDataByCodeResultType) -> NetworkCancellable?
+                        _ completion: @escaping GetStationDataByCodeResultType) -> NetworkCancellable?
 }
 
 final class NetworkGetStationDataByCodeRepository: GetStationDataByCodeRepository {
@@ -24,7 +24,7 @@ final class NetworkGetStationDataByCodeRepository: GetStationDataByCodeRepositor
     }
     
     func getStationData(_ request: GetStationDataByCodeRequest,
-                          _ completion: @escaping GetStationDataByCodeResultType) -> NetworkCancellable? {
+                        _ completion: @escaping GetStationDataByCodeResultType) -> NetworkCancellable? {
         do {
             
             let request = try APIRouter.getStationDataByCode(

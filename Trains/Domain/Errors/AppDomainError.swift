@@ -9,14 +9,17 @@ import Foundation
 
 enum AppDomainError: String, Error {
     
-    // MARK: - Presentation Errors
+    // MARK: - Presentation Errors -
+    
     case appWindowFailedToCreate = "fatal.error"
     case failedToDequeueCell
     
     // MARK: - Network Errors -
+    
     case failedToResolveBaseUrl = "failed.to.resolve.base.url"
     
-    // MARK: - Serialisation Errors
+    // MARK: - Serialisation Errors -
+    
     case failedToDecodeImageData
     case failedToDecodeData
     
