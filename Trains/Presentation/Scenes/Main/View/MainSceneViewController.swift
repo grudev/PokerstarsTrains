@@ -34,6 +34,7 @@ class MainSceneViewController: UIViewController {
     private var stationDataByNameCancelable: NetworkCancellable?
     private var stationDataByCodeCancelable: NetworkCancellable?
     private var stationsFilteredCancelable: NetworkCancellable?
+    private var trainMovementsCancelable: NetworkCancellable?
     
     // MARK: - ViewController Lifecycle -
     
@@ -56,6 +57,7 @@ class MainSceneViewController: UIViewController {
 //        requestStationDataByName("Bayside", minutes: 90)
 //        requestStationDataByCode("mhide", minutes: 20)
 //        requestStationsFilter("br")
+        requestTrainMovements("e109", Date())
     }
     
 }
@@ -129,6 +131,18 @@ private extension MainSceneViewController {
     func requestStationsFilter(_ filter: String) {
         let request = GetStationsFilterRequest(filter: filter)
         stationsFilteredCancelable = viewModel.getStationsFilter(request) { (result) in
+            switch result {
+            case .success(let data):
+                print("SUCCESS \(data)")
+            case .failure(let error):
+                print("ERROR \(error)")
+            }
+        }
+    }
+    
+    func requestTrainMovements(_ id: String, _ date: Date) {
+        let request = GetTrainMovementsRequest(id: id, date: date)
+        trainMovementsCancelable = viewModel.getTrainMovements(request) { (result) in
             switch result {
             case .success(let data):
                 print("SUCCESS \(data)")

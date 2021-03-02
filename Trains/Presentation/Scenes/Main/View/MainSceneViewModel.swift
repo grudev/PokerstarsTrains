@@ -12,6 +12,7 @@ typealias GetCurrentTrainsType = (Result<GetCurrentTrainsUseCase.Response, Error
 typealias GetStationDataByNameType = (Result<GetStationDataByNameUseCase.Response, Error>) -> Void
 typealias GetStationDataByCodeType = (Result<GetStationDataByCodeUseCase.Response, Error>) -> Void
 typealias GetStationsFilterType = (Result<GetStationsFilterUseCase.Response, Error>) -> Void
+typealias GetTrainsMovementsType = (Result<GetTrainMovementsUseCase.Response, Error>) -> Void
 
 struct MainSceneViewModelCallbacks {
     let onItemSelected: (_ id: String) -> Void
@@ -34,6 +35,9 @@ protocol MainSceneViewModelable {
     func getStationsFilter(_ request: GetStationsFilterRequest,
                            _ completion: @escaping GetStationsFilterType) -> NetworkCancellable?
     
+    func getTrainMovements(_ request: GetTrainMovementsRequest,
+                           _ completion: @escaping GetTrainsMovementsType) -> NetworkCancellable?
+    
     func didSelectItem(_ id: String)
     
 }
@@ -48,6 +52,7 @@ class MainSceneViewModel: MainSceneViewModelable, ItemCellViewModelParent {
     private let getStationDataByNameUseCase: GetStationDataByNameUseCase!
     private let getStationDataByCodeUseCase: GetStationDataByCodeUseCase!
     private let getStationsFilterUseCase: GetStationsFilterUseCase!
+    private let getTrainMovementsUseCase: GetTrainMovementsUseCase!
     
     // MARK: - ViewModel Lifecycle
     
@@ -56,40 +61,53 @@ class MainSceneViewModel: MainSceneViewModelable, ItemCellViewModelParent {
          _ getCurrentTrainsUseCase: GetCurrentTrainsUseCase,
          _ getStationDataByNameUseCase: GetStationDataByNameUseCase,
          _ getStationDataByCodeUseCase: GetStationDataByCodeUseCase,
-         _ getStationsFilterUseCase: GetStationsFilterUseCase) {
+         _ getStationsFilterUseCase: GetStationsFilterUseCase,
+         _ getTrainMovementsUseCase: GetTrainMovementsUseCase) {
         self.callbacks = callbacks
         self.getAllStationsUseCase = getAllStationsUseCase
         self.getCurrentTrainsUseCase = getCurrentTrainsUseCase
         self.getStationDataByNameUseCase = getStationDataByNameUseCase
         self.getStationDataByCodeUseCase = getStationDataByCodeUseCase
         self.getStationsFilterUseCase = getStationsFilterUseCase
+        self.getTrainMovementsUseCase = getTrainMovementsUseCase
     }
     
     // MARK: - Public API -
     
+    @discardableResult
     func getAllStations(_ request: GetAllStationsRequest,
                         _ completion: @escaping GetAllStationsType) -> NetworkCancellable? {
         getAllStationsUseCase.execute(request, completion)
     }
     
+    @discardableResult
     func getCurrentTrains(_ request: GetCurrentTrainsRequest,
                           _ completion: @escaping GetCurrentTrainsType) -> NetworkCancellable? {
         getCurrentTrainsUseCase.execute(request, completion)
     }
     
+    @discardableResult
     func getStationDataByName(_ request: GetStationDataByNameRequest,
                               _ completion: @escaping GetStationDataByNameType) -> NetworkCancellable? {
         getStationDataByNameUseCase.execute(request, completion)
     }
     
+    @discardableResult
     func getStationDataByCode(_ request: GetStationDataByCodeRequest,
                               _ completion: @escaping GetStationDataByCodeType) -> NetworkCancellable? {
         getStationDataByCodeUseCase.execute(request, completion)
     }
     
+    @discardableResult
     func getStationsFilter(_ request: GetStationsFilterRequest,
                            _ completion: @escaping GetStationsFilterType) -> NetworkCancellable? {
         getStationsFilterUseCase.execute(request, completion)
+    }
+    
+    @discardableResult
+    func getTrainMovements(_ request: GetTrainMovementsRequest,
+                           _ completion: @escaping GetTrainsMovementsType) -> NetworkCancellable? {
+        getTrainMovementsUseCase.execute(request, completion)
     }
     
     func didSelectItem(_ id: String) {

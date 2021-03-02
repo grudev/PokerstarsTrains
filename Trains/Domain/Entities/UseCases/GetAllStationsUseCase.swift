@@ -18,6 +18,7 @@ final class GetAllStationsUseCase: UseCase {
         self.repository = repository
     }
     
+    @discardableResult
     func execute(_ request: Request,
                  _ completion: @escaping (Result<Response, Error>) -> Void) -> NetworkCancellable? {
         repository.getAllStations(request, completion)
