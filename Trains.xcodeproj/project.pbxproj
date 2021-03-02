@@ -49,6 +49,11 @@
 		9F8EE5EC25ED884E005D4FBF /* GetStationDataByCodeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE5EB25ED884E005D4FBF /* GetStationDataByCodeRequest.swift */; };
 		9F8EE5EF25ED891A005D4FBF /* StationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE5EE25ED891A005D4FBF /* StationData.swift */; };
 		9F8EE5F325ED8DAA005D4FBF /* StationDataCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE5F225ED8DAA005D4FBF /* StationDataCollection.swift */; };
+		9F8EE5F825EE3204005D4FBF /* GetStationsFilterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE5F725EE3204005D4FBF /* GetStationsFilterUseCase.swift */; };
+		9F8EE5FB25EE3226005D4FBF /* GetStationsFilterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE5FA25EE3226005D4FBF /* GetStationsFilterRequest.swift */; };
+		9F8EE5FF25EE33E1005D4FBF /* StationsFilterCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE5FE25EE33E1005D4FBF /* StationsFilterCollection.swift */; };
+		9F8EE60325EE33FC005D4FBF /* StationFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE60225EE33FC005D4FBF /* StationFilter.swift */; };
+		9F8EE60625EE3673005D4FBF /* GetStationsFilterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE60525EE3673005D4FBF /* GetStationsFilterRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +103,11 @@
 		9F8EE5EB25ED884E005D4FBF /* GetStationDataByCodeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStationDataByCodeRequest.swift; sourceTree = "<group>"; };
 		9F8EE5EE25ED891A005D4FBF /* StationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationData.swift; sourceTree = "<group>"; };
 		9F8EE5F225ED8DAA005D4FBF /* StationDataCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDataCollection.swift; sourceTree = "<group>"; };
+		9F8EE5F725EE3204005D4FBF /* GetStationsFilterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStationsFilterUseCase.swift; sourceTree = "<group>"; };
+		9F8EE5FA25EE3226005D4FBF /* GetStationsFilterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStationsFilterRequest.swift; sourceTree = "<group>"; };
+		9F8EE5FE25EE33E1005D4FBF /* StationsFilterCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsFilterCollection.swift; sourceTree = "<group>"; };
+		9F8EE60225EE33FC005D4FBF /* StationFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationFilter.swift; sourceTree = "<group>"; };
+		9F8EE60525EE3673005D4FBF /* GetStationsFilterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStationsFilterRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,6 +330,7 @@
 				9F8EE5C525ED6728005D4FBF /* GetCurrentTrainsUseCase.swift */,
 				9F8EE5DA25ED8778005D4FBF /* GetStationDataByNameUseCase.swift */,
 				9F8EE5DD25ED878E005D4FBF /* GetStationDataByCodeUseCase.swift */,
+				9F8EE5F725EE3204005D4FBF /* GetStationsFilterUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -365,6 +376,7 @@
 				9F8EE5C825ED6755005D4FBF /* GetCurrentTrainsRepository.swift */,
 				9F8EE5E225ED87EC005D4FBF /* GetStationDataByNameRepository.swift */,
 				9F8EE5E525ED8811005D4FBF /* GetStationDataByCodeRepository.swift */,
+				9F8EE60525EE3673005D4FBF /* GetStationsFilterRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -372,6 +384,7 @@
 		9F8EE5B025ED1FA6005D4FBF /* Station */ = {
 			isa = PBXGroup;
 			children = (
+				9F8EE5FD25EE33D3005D4FBF /* Filter */,
 				9F8EE5F125ED8D98005D4FBF /* Data */,
 				9F8EE5A925ED1F8F005D4FBF /* StationsCollection.swift */,
 				9F8EE5AC25ED1F98005D4FBF /* Station.swift */,
@@ -398,6 +411,7 @@
 				9F8EE5C225ED66D8005D4FBF /* GetCurrentTrainsRequest.swift */,
 				9F8EE5E825ED8837005D4FBF /* GetStationDataByNameRequest.swift */,
 				9F8EE5EB25ED884E005D4FBF /* GetStationDataByCodeRequest.swift */,
+				9F8EE5FA25EE3226005D4FBF /* GetStationsFilterRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -409,6 +423,15 @@
 				9F8EE5EE25ED891A005D4FBF /* StationData.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		9F8EE5FD25EE33D3005D4FBF /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				9F8EE5FE25EE33E1005D4FBF /* StationsFilterCollection.swift */,
+				9F8EE60225EE33FC005D4FBF /* StationFilter.swift */,
+			);
+			path = Filter;
 			sourceTree = "<group>";
 		};
 		D84E795F9F4670B07A8423DC /* Pods */ = {
@@ -546,6 +569,7 @@
 				9F8EE5C925ED6755005D4FBF /* GetCurrentTrainsRepository.swift in Sources */,
 				9F8EE5F325ED8DAA005D4FBF /* StationDataCollection.swift in Sources */,
 				9F8EE58425EABE34005D4FBF /* APIRouter.swift in Sources */,
+				9F8EE5FB25EE3226005D4FBF /* GetStationsFilterRequest.swift in Sources */,
 				9F8EE57325EABCD9005D4FBF /* AppDomainError.swift in Sources */,
 				9F8EE5DE25ED878E005D4FBF /* GetStationDataByCodeUseCase.swift in Sources */,
 				9F8EE56B25EABBC3005D4FBF /* MainSceneViewController.swift in Sources */,
@@ -557,6 +581,7 @@
 				9F8EE5CD25ED766A005D4FBF /* CurrentTrainsCollection.swift in Sources */,
 				9F8EE5E325ED87EC005D4FBF /* GetStationDataByNameRepository.swift in Sources */,
 				9F8EE5EF25ED891A005D4FBF /* StationData.swift in Sources */,
+				9F8EE60625EE3673005D4FBF /* GetStationsFilterRepository.swift in Sources */,
 				9F8EE5A425ED09BA005D4FBF /* TrainType.swift in Sources */,
 				9F8EE5DB25ED8778005D4FBF /* GetStationDataByNameUseCase.swift in Sources */,
 				9F8EE58725EABF4B005D4FBF /* Identifiable.swift in Sources */,
@@ -564,10 +589,12 @@
 				9F8EE5E625ED8811005D4FBF /* GetStationDataByCodeRepository.swift in Sources */,
 				9F8EE5E925ED8837005D4FBF /* GetStationDataByNameRequest.swift in Sources */,
 				9F8EE5AD25ED1F98005D4FBF /* Station.swift in Sources */,
+				9F8EE60325EE33FC005D4FBF /* StationFilter.swift in Sources */,
 				9F8EE59025EAC10C005D4FBF /* Constants.swift in Sources */,
 				9F8EE5AA25ED1F8F005D4FBF /* StationsCollection.swift in Sources */,
 				9F8EE55825EAB9CD005D4FBF /* AppInitialiser.swift in Sources */,
 				9F8EE5A725ED1F15005D4FBF /* GetAllStationsUseCase.swift in Sources */,
+				9F8EE5FF25EE33E1005D4FBF /* StationsFilterCollection.swift in Sources */,
 				9F8EE5C025ED62ED005D4FBF /* GetAllStationsRequest.swift in Sources */,
 				9F8EE5D125ED76BE005D4FBF /* TrainPosition.swift in Sources */,
 				9F8EE57B25EABD7C005D4FBF /* UseCase.swift in Sources */,
@@ -578,6 +605,7 @@
 				9F8EE59925EAC9A0005D4FBF /* MainSceneDataProvider.swift in Sources */,
 				9F8EE5A125ED07B2005D4FBF /* StationType.swift in Sources */,
 				9F8EE5D825ED7D21005D4FBF /* TrainStatus.swift in Sources */,
+				9F8EE5F825EE3204005D4FBF /* GetStationsFilterUseCase.swift in Sources */,
 				9F8EE55F25EABA71005D4FBF /* Coordinatable.swift in Sources */,
 				9F8EE5C325ED66D8005D4FBF /* GetCurrentTrainsRequest.swift in Sources */,
 			);

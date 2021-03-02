@@ -33,6 +33,7 @@ class MainSceneViewController: UIViewController {
     private var trainsCancellable: NetworkCancellable?
     private var stationDataByNameCancelable: NetworkCancellable?
     private var stationDataByCodeCancelable: NetworkCancellable?
+    private var stationsFilteredCancelable: NetworkCancellable?
     
     // MARK: - ViewController Lifecycle -
     
@@ -54,6 +55,7 @@ class MainSceneViewController: UIViewController {
 //        requestCurrentTraint(for: nil)
 //        requestStationDataByName("Bayside", minutes: 90)
 //        requestStationDataByCode("mhide", minutes: 20)
+//        requestStationsFilter("br")
     }
     
 }
@@ -81,11 +83,9 @@ private extension MainSceneViewController {
         stationsCancellable = viewModel.getAllStations(request) { result in
             switch result {
             case .success(let data):
-//                print("SUCCESS \(data)")
-            break
+                print("SUCCESS \(data)")
             case .failure(let error):
-//                print("ERROR \(error)")
-            break
+                print("ERROR \(error)")
             }
         }
     }
@@ -117,6 +117,18 @@ private extension MainSceneViewController {
     func requestStationDataByCode(_ code: String, minutes: Int?) {
         let request = GetStationDataByCodeRequest(code: code, minutes: minutes)
         stationDataByCodeCancelable = viewModel.getStationDataByCode(request) { (result) in
+            switch result {
+            case .success(let data):
+                print("SUCCESS \(data)")
+            case .failure(let error):
+                print("ERROR \(error)")
+            }
+        }
+    }
+    
+    func requestStationsFilter(_ filter: String) {
+        let request = GetStationsFilterRequest(filter: filter)
+        stationsFilteredCancelable = viewModel.getStationsFilter(request) { (result) in
             switch result {
             case .success(let data):
                 print("SUCCESS \(data)")

@@ -11,6 +11,7 @@ typealias GetAllStationsType = (Result<GetAllStationsUseCase.Response, Error>) -
 typealias GetCurrentTrainsType = (Result<GetCurrentTrainsUseCase.Response, Error>) -> Void
 typealias GetStationDataByNameType = (Result<GetStationDataByNameUseCase.Response, Error>) -> Void
 typealias GetStationDataByCodeType = (Result<GetStationDataByCodeUseCase.Response, Error>) -> Void
+typealias GetStationsFilterType = (Result<GetStationsFilterUseCase.Response, Error>) -> Void
 
 struct MainSceneViewModelCallbacks {
     let onItemSelected: (_ id: String) -> Void
@@ -26,8 +27,12 @@ protocol MainSceneViewModelable {
     
     func getStationDataByName(_ request: GetStationDataByNameRequest,
                               _ completion: @escaping GetStationDataByNameType) -> NetworkCancellable?
+    
     func getStationDataByCode(_ request: GetStationDataByCodeRequest,
                               _ completion: @escaping GetStationDataByCodeType) -> NetworkCancellable?
+    
+    func getStationsFilter(_ request: GetStationsFilterRequest,
+                           _ completion: @escaping GetStationsFilterType) -> NetworkCancellable?
     
     func didSelectItem(_ id: String)
     
@@ -42,6 +47,7 @@ class MainSceneViewModel: MainSceneViewModelable, ItemCellViewModelParent {
     private let getCurrentTrainsUseCase: GetCurrentTrainsUseCase!
     private let getStationDataByNameUseCase: GetStationDataByNameUseCase!
     private let getStationDataByCodeUseCase: GetStationDataByCodeUseCase!
+    private let getStationsFilterUseCase: GetStationsFilterUseCase!
     
     // MARK: - ViewModel Lifecycle
     
@@ -49,12 +55,14 @@ class MainSceneViewModel: MainSceneViewModelable, ItemCellViewModelParent {
          _ getAllStationsUseCase: GetAllStationsUseCase,
          _ getCurrentTrainsUseCase: GetCurrentTrainsUseCase,
          _ getStationDataByNameUseCase: GetStationDataByNameUseCase,
-         _ getStationDataByCodeUseCase: GetStationDataByCodeUseCase) {
+         _ getStationDataByCodeUseCase: GetStationDataByCodeUseCase,
+         _ getStationsFilterUseCase: GetStationsFilterUseCase) {
         self.callbacks = callbacks
         self.getAllStationsUseCase = getAllStationsUseCase
         self.getCurrentTrainsUseCase = getCurrentTrainsUseCase
         self.getStationDataByNameUseCase = getStationDataByNameUseCase
         self.getStationDataByCodeUseCase = getStationDataByCodeUseCase
+        self.getStationsFilterUseCase = getStationsFilterUseCase
     }
     
     // MARK: - Public API -
@@ -77,6 +85,11 @@ class MainSceneViewModel: MainSceneViewModelable, ItemCellViewModelParent {
     func getStationDataByCode(_ request: GetStationDataByCodeRequest,
                               _ completion: @escaping GetStationDataByCodeType) -> NetworkCancellable? {
         getStationDataByCodeUseCase.execute(request, completion)
+    }
+    
+    func getStationsFilter(_ request: GetStationsFilterRequest,
+                           _ completion: @escaping GetStationsFilterType) -> NetworkCancellable? {
+        getStationsFilterUseCase.execute(request, completion)
     }
     
     func didSelectItem(_ id: String) {

@@ -25,7 +25,8 @@ extension AppDIContainer: MainCoordinatorDIContainer {
             makeGetAllStationsUseCase(),
             makeGetCurrentTrainsUseCase(),
             makeGetStationDataByNameUseCase(),
-            makeGetStationDataByCodeUseCase()
+            makeGetStationDataByCodeUseCase(),
+            makeGetStationsFilterUseCase()
         )
     }
     
@@ -54,6 +55,10 @@ private extension AppDIContainer {
     func makeGetStationDataByCodeUseCase() -> GetStationDataByCodeUseCase {
         GetStationDataByCodeUseCase(makeGetStationDataByCodeRepository())
     }
+    
+    func makeGetStationsFilterUseCase() -> GetStationsFilterUseCase {
+        GetStationsFilterUseCase(makeGetStationsFilterRepository())
+    }
 
 }
 
@@ -75,6 +80,10 @@ private extension AppDIContainer {
     
     func makeGetStationDataByCodeRepository() -> GetStationDataByCodeRepository {
         NetworkGetStationDataByCodeRepository(networkManager)
+    }
+    
+    func makeGetStationsFilterRepository() -> GetStationsFilterRepository {
+        NetworkGetStationsFilterRepository(networkManager)
     }
     
 }
