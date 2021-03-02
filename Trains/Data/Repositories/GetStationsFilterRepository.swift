@@ -27,9 +27,7 @@ final class NetworkGetStationsFilterRepository: GetStationsFilterRepository {
                              _ completion: @escaping GetStationsFilterResultType) -> NetworkCancellable? {
         do {
             
-            let request = try APIRouter.getStationsFilter(
-                filter: request.filter
-            ).asURLRequest()
+            let request = try APIRouter.getStationsFilter(request: request).asURLRequest()
             
             let cancelable = networkManager.request(request, completion: completion)
             return cancelable

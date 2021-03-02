@@ -6,58 +6,35 @@
 //
 
 import UIKit
+import MapKit
 
-class MainSceneViewController: UIViewController {
+class MainSceneViewController: UIViewController, StoryboardInstantiable {
+    
+    // MARK: - Class Methods -
+    
+    class func create(with viewModel: MainSceneViewModelable,
+                      styles: MainSceneStylable) -> MainSceneViewController {
+        let vc = MainSceneViewController.instantiateViewController()
+        vc.viewModel = viewModel
+        vc.styles = styles
+        return vc
+    }
     
     // MARK: - Components -
     
-    private lazy var collectionViewLayout = UICollectionViewFlowLayout()
-    
-    private lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: collectionViewLayout)
-        collectionView.backgroundColor = styles.backgroundColor
-        return collectionView
-    }()
-    
-    private lazy var dataProvider: MainSceneDataProvider = {
-        let dataProvider = MainSceneDataProvider(collectionView, styles.cellStyle)
-        dataProvider.delegate = self
-        return dataProvider
-    }()
+    @IBOutlet weak private var mapView: MKMapView!
     
     // MARK: - Properties -
     
     private var viewModel: MainSceneViewModelable!
     private var styles: MainSceneStylable!
-    private var stationsCancellable: NetworkCancellable?
-    private var trainsCancellable: NetworkCancellable?
-    private var stationDataByNameCancelable: NetworkCancellable?
-    private var stationDataByCodeCancelable: NetworkCancellable?
-    private var stationsFilteredCancelable: NetworkCancellable?
-    private var trainMovementsCancelable: NetworkCancellable?
     
     // MARK: - ViewController Lifecycle -
-    
-    init(_ viewModel: MainSceneViewModelable,
-         _ styles: MainSceneStylable) {
-        self.viewModel = viewModel
-        self.styles = styles
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-//        requestStations(for: nil)
-//        requestCurrentTraint(for: nil)
-//        requestStationDataByName("Bayside", minutes: 90)
-//        requestStationDataByCode("mhide", minutes: 20)
-//        requestStationsFilter("br")
-        requestTrainMovements("e109", Date())
+        requestStations(for: nil)
     }
     
 }
@@ -69,20 +46,10 @@ private extension MainSceneViewController {
     func setup() {
         view.backgroundColor = styles.backgroundColor
         
-        // setup collection view constraints
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(collectionView)
-        NSLayoutConstraint.activate([
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
     }
     
     func requestStations(for type: StationType?) {
-        let request = GetAllStationsRequest(type: type)
-        stationsCancellable = viewModel.getAllStations(request) { result in
+        viewModel.getAllStations(type: type) { result in
             switch result {
             case .success(let data):
                 print("SUCCESS \(data)")
@@ -93,8 +60,7 @@ private extension MainSceneViewController {
     }
     
     func requestCurrentTraint(for type: TrainType?) {
-        let request = GetCurrentTrainsRequest(type: type)
-        trainsCancellable = viewModel.getCurrentTrains(request) { result in
+        viewModel.getCurrentTrains(type: type) { result in
             switch result {
             case .success(let data):
                 print("SUCCESS \(data)")
@@ -105,8 +71,7 @@ private extension MainSceneViewController {
     }
     
     func requestStationDataByName(_ name: String, minutes: Int?) {
-        let request = GetStationDataByNameRequest(name: name, minutes: minutes)
-        stationDataByNameCancelable = viewModel.getStationDataByName(request) { (result) in
+        viewModel.getStationDataByName(name: name, minutes: minutes) { (result) in
             switch result {
             case .success(let data):
                 print("SUCCESS \(data)")
@@ -117,8 +82,7 @@ private extension MainSceneViewController {
     }
     
     func requestStationDataByCode(_ code: String, minutes: Int?) {
-        let request = GetStationDataByCodeRequest(code: code, minutes: minutes)
-        stationDataByCodeCancelable = viewModel.getStationDataByCode(request) { (result) in
+        viewModel.getStationDataByCode(code: code, minutes: minutes) { (result) in
             switch result {
             case .success(let data):
                 print("SUCCESS \(data)")
@@ -129,8 +93,7 @@ private extension MainSceneViewController {
     }
     
     func requestStationsFilter(_ filter: String) {
-        let request = GetStationsFilterRequest(filter: filter)
-        stationsFilteredCancelable = viewModel.getStationsFilter(request) { (result) in
+        viewModel.getStationsFilter(filter: filter) { (result) in
             switch result {
             case .success(let data):
                 print("SUCCESS \(data)")
@@ -141,8 +104,7 @@ private extension MainSceneViewController {
     }
     
     func requestTrainMovements(_ id: String, _ date: Date) {
-        let request = GetTrainMovementsRequest(id: id, date: date)
-        trainMovementsCancelable = viewModel.getTrainMovements(request) { (result) in
+        viewModel.getTrainMovements(id: id, date: date) { (result) in
             switch result {
             case .success(let data):
                 print("SUCCESS \(data)")

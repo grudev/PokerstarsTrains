@@ -27,14 +27,10 @@ final class NetworkGetTrainMovementsRepository: GetTrainMovementsRepository {
                            _ completion: @escaping GetTrainMovementsResultType) -> NetworkCancellable? {
         do {
             
-            let date = DateFormatter.trainMovementsDateFormatter.string(from: request.date)
-            let request = try APIRouter.getTrainMovements(
-                id: request.id,
-                date: date
-            ).asURLRequest()
-            
+            let request = try APIRouter.getTrainMovements(request: request).asURLRequest()
             let cancelable = networkManager.request(request, completion: completion)
             return cancelable
+            
         } catch {
             completion(.failure(error))
             return nil

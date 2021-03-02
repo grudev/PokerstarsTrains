@@ -60,6 +60,10 @@
 		9F8EE61425EE6B61005D4FBF /* GetTrainMovementsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE61325EE6B61005D4FBF /* GetTrainMovementsRequest.swift */; };
 		9F8EE61725EE6C41005D4FBF /* GetTrainMovementsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE61625EE6C41005D4FBF /* GetTrainMovementsRepository.swift */; };
 		9F8EE61B25EE7BC2005D4FBF /* DateFormatter+DomainFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE61A25EE7BC2005D4FBF /* DateFormatter+DomainFormatters.swift */; };
+		9F8EE62125EE9D28005D4FBF /* NibInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE62025EE9D28005D4FBF /* NibInstantiable.swift */; };
+		9F8EE62425EEA0C9005D4FBF /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE62325EEA0C9005D4FBF /* StoryboardInstantiable.swift */; };
+		9F8EE62825EEA0FE005D4FBF /* MainSceneViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F8EE62725EEA0FE005D4FBF /* MainSceneViewController.storyboard */; };
+		9F8EE62B25EEAC12005D4FBF /* MapViewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE62A25EEAC12005D4FBF /* MapViewDataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +124,10 @@
 		9F8EE61325EE6B61005D4FBF /* GetTrainMovementsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTrainMovementsRequest.swift; sourceTree = "<group>"; };
 		9F8EE61625EE6C41005D4FBF /* GetTrainMovementsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTrainMovementsRepository.swift; sourceTree = "<group>"; };
 		9F8EE61A25EE7BC2005D4FBF /* DateFormatter+DomainFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+DomainFormatters.swift"; sourceTree = "<group>"; };
+		9F8EE62025EE9D28005D4FBF /* NibInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibInstantiable.swift; sourceTree = "<group>"; };
+		9F8EE62325EEA0C9005D4FBF /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
+		9F8EE62725EEA0FE005D4FBF /* MainSceneViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainSceneViewController.storyboard; sourceTree = "<group>"; };
+		9F8EE62A25EEAC12005D4FBF /* MapViewDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewDataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +217,8 @@
 			isa = PBXGroup;
 			children = (
 				9F8EE58625EABF4B005D4FBF /* Identifiable.swift */,
+				9F8EE62025EE9D28005D4FBF /* NibInstantiable.swift */,
+				9F8EE62325EEA0C9005D4FBF /* StoryboardInstantiable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -287,6 +297,7 @@
 				9F8EE56725EABB77005D4FBF /* Cells */,
 				9F8EE56D25EABBDF005D4FBF /* MainSceneViewModel.swift */,
 				9F8EE56A25EABBC3005D4FBF /* MainSceneViewController.swift */,
+				9F8EE62725EEA0FE005D4FBF /* MainSceneViewController.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -304,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				9F8EE59825EAC9A0005D4FBF /* MainSceneDataProvider.swift */,
+				9F8EE62A25EEAC12005D4FBF /* MapViewDataProvider.swift */,
 			);
 			path = DataProviders;
 			sourceTree = "<group>";
@@ -544,6 +556,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F8EE62825EEA0FE005D4FBF /* MainSceneViewController.storyboard in Resources */,
 				9F57829C25EA31EA00405E5E /* LaunchScreen.storyboard in Resources */,
 				9F57829925EA31EA00405E5E /* Assets.xcassets in Resources */,
 			);
@@ -610,6 +623,7 @@
 				9F8EE56B25EABBC3005D4FBF /* MainSceneViewController.swift in Sources */,
 				9F8EE56E25EABBDF005D4FBF /* MainSceneViewModel.swift in Sources */,
 				9F8EE60925EE3A56005D4FBF /* GetTrainMovementsUseCase.swift in Sources */,
+				9F8EE62B25EEAC12005D4FBF /* MapViewDataProvider.swift in Sources */,
 				9F8EE5B425ED26B4005D4FBF /* GetAllStationsRepository.swift in Sources */,
 				9F8EE59625EAC413005D4FBF /* ItemCellViewModel.swift in Sources */,
 				9F8EE59325EAC408005D4FBF /* ItemCell.swift in Sources */,
@@ -636,6 +650,7 @@
 				9F8EE61025EE3A9A005D4FBF /* TrainMovements.swift in Sources */,
 				9F8EE5D125ED76BE005D4FBF /* TrainPosition.swift in Sources */,
 				9F8EE61725EE6C41005D4FBF /* GetTrainMovementsRepository.swift in Sources */,
+				9F8EE62425EEA0C9005D4FBF /* StoryboardInstantiable.swift in Sources */,
 				9F8EE57B25EABD7C005D4FBF /* UseCase.swift in Sources */,
 				9F57829025EA31E400405E5E /* AppDelegate.swift in Sources */,
 				9F8EE5EC25ED884E005D4FBF /* GetStationDataByCodeRequest.swift in Sources */,
@@ -647,6 +662,7 @@
 				9F8EE5D825ED7D21005D4FBF /* TrainStatus.swift in Sources */,
 				9F8EE5F825EE3204005D4FBF /* GetStationsFilterUseCase.swift in Sources */,
 				9F8EE55F25EABA71005D4FBF /* Coordinatable.swift in Sources */,
+				9F8EE62125EE9D28005D4FBF /* NibInstantiable.swift in Sources */,
 				9F8EE5C325ED66D8005D4FBF /* GetCurrentTrainsRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

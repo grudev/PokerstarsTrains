@@ -32,7 +32,8 @@ extension AppDIContainer: MainCoordinatorDIContainer {
     }
     
     func makeMainSceneViewController(_ viewModel: MainSceneViewModelable) -> MainSceneViewController {
-        MainSceneViewController(viewModel, AppTheme.makeMainSceneStyles())
+        return MainSceneViewController.create(with: viewModel,
+                                              styles: AppTheme.makeMainSceneStyles())
     }
     
 }

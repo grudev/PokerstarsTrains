@@ -10,6 +10,6 @@ import Foundation
 struct GetTrainMovementsRequest {
     
     var id: String
-    var date: Date
+    var date: String
     
 }

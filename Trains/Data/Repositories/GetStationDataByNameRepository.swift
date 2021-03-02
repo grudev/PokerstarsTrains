@@ -24,13 +24,10 @@ final class NetworkGetStationDataByNameRepository: GetStationDataByNameRepositor
     }
     
     func getStationData(_ request: GetStationDataByNameRequest,
-                          _ completion: @escaping GetStationDataByNameResultType) -> NetworkCancellable? {
+                        _ completion: @escaping GetStationDataByNameResultType) -> NetworkCancellable? {
         do {
             
-            let request = try APIRouter.getStationDataByName(
-                name: request.name,
-                minutes: request.minutes
-            ).asURLRequest()
+            let request = try APIRouter.getStationDataByName(request: request).asURLRequest()
             
             let cancelable = networkManager.request(request, completion: completion)
             return cancelable

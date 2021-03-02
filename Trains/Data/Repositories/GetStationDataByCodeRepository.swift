@@ -27,13 +27,10 @@ final class NetworkGetStationDataByCodeRepository: GetStationDataByCodeRepositor
                         _ completion: @escaping GetStationDataByCodeResultType) -> NetworkCancellable? {
         do {
             
-            let request = try APIRouter.getStationDataByCode(
-                code: request.code,
-                minutes: request.minutes
-            ).asURLRequest()
-            
+            let request = try APIRouter.getStationDataByCode(request: request).asURLRequest()
             let cancelable = networkManager.request(request, completion: completion)
             return cancelable
+            
         } catch {
             completion(.failure(error))
             return nil

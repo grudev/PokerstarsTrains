@@ -15,10 +15,10 @@ enum APIRouter {
     
     case getAllStations(request: GetAllStationsRequest)
     case getCurrentTrains(request: GetCurrentTrainsRequest)
-    case getStationDataByName(name: String, minutes: Int?)
-    case getStationDataByCode(code: String, minutes: Int?)
-    case getStationsFilter(filter: String)
-    case getTrainMovements(id: String, date: String)
+    case getStationDataByName(request: GetStationDataByNameRequest)
+    case getStationDataByCode(request: GetStationDataByCodeRequest)
+    case getStationsFilter(request: GetStationsFilterRequest)
+    case getTrainMovements(request: GetTrainMovementsRequest)
     
     // MARK: - Convert to url request -
     
@@ -71,8 +71,8 @@ private extension APIRouter {
             return "getCurrentTrainsXML_WithTrainType"
         case .getStationDataByName:
             return "getStationDataByNameXML"
-        case .getStationDataByCode(_, let minutes):
-            guard let _ = minutes else {
+        case .getStationDataByCode(let request):
+            guard let _ = request.minutes else {
                 return "getStationDataByCodeXML_WithNumMins"
             }
             return "getStationDataByCodeXML"
@@ -96,28 +96,28 @@ private extension APIRouter {
             guard let type = request.type else { return nil }
             return ["TrainType": type.rawValue]
             
-        case .getStationDataByName(let name, let minutes):
+        case .getStationDataByName(let request):
             
-            var params: [String: String] = ["StationDesc": name]
-            guard let _minutes = minutes else { return params }
+            var params: [String: String] = ["StationDesc": request.name]
+            guard let _minutes = request.minutes else { return params }
             params.updateValue("\(_minutes)", forKey: "NumMins")
             return params
             
-        case .getStationDataByCode(let code, let minutes):
+        case .getStationDataByCode(let request):
             
-            var params: [String: String] = ["StationCode": code]
-            guard let _minutes = minutes else { return params }
+            var params: [String: String] = ["StationCode": request.code]
+            guard let _minutes = request.minutes else { return params }
             params.updateValue("\(_minutes)", forKey: "NumMins")
             return params
             
-        case .getStationsFilter(let filter):
+        case .getStationsFilter(let request):
             
-            return ["StationText": filter]
+            return ["StationText": request.filter]
         
-        case .getTrainMovements(let id, let date):
+        case .getTrainMovements(let request):
             
-            var params: [String: String] = ["TrainId": id]
-            params.updateValue(date, forKey: "TrainDate")
+            var params: [String: String] = ["TrainId": request.id]
+            params.updateValue(request.date, forKey: "TrainDate")
             return params
             
         }
