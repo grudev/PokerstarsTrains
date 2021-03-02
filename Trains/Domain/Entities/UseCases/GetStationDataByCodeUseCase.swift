@@ -18,7 +18,7 @@ final class GetStationDataByCodeUseCase: UseCase {
         self.repository = repository
     }
     
-    func execute(_ request: GetStationDataByCodeRequest,
+    func execute(_ request: Request,
                  _ completion: @escaping (Result<Response, Error>) -> Void) -> NetworkCancellable? {
         repository.getStationData(request, completion)
     }

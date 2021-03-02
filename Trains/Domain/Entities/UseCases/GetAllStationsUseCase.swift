@@ -19,7 +19,7 @@ final class GetAllStationsUseCase: UseCase {
     }
     
     func execute(_ request: Request,
-                 _ completion: @escaping (_ result: Result<Response, Error>) -> Void) -> NetworkCancellable? {
+                 _ completion: @escaping (Result<Response, Error>) -> Void) -> NetworkCancellable? {
         repository.getAllStations(request, completion)
     }
     
