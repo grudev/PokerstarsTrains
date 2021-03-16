@@ -16,46 +16,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TDO-mN-H5r">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
-                                <viewLayoutGuide key="contentLayoutGuide" id="rn3-UM-ucR"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="3Ks-7f-fEf"/>
-                            </scrollView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfQ-am-ohX">
-                                <rect key="frame" x="0.0" y="44" width="414" height="860"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="zbo-2J-Q8E">
+                                <rect key="frame" x="20" y="392" width="374" height="122"/>
                                 <subviews>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0rf-Nd-sTe">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TFs-tR-Ob6">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="400" id="OOY-JT-ifE"/>
+                                            <constraint firstAttribute="height" constant="45" id="Crw-hM-bUd"/>
                                         </constraints>
-                                    </mapView>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="onSearchStationButtonPressed" destination="46l-kR-YOi" eventType="touchUpInside" id="599-dd-qov"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLo-9L-eAS">
+                                        <rect key="frame" x="0.0" y="77" width="374" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="6TR-7D-Sic"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="onSearchTrainButtonPressed" destination="46l-kR-YOi" eventType="touchUpInside" id="r9f-qV-wX4"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="0rf-Nd-sTe" secondAttribute="trailing" id="Cbh-sw-G0U"/>
-                                    <constraint firstAttribute="bottom" secondItem="0rf-Nd-sTe" secondAttribute="bottom" constant="460" id="Gi2-j6-gdk"/>
-                                    <constraint firstItem="0rf-Nd-sTe" firstAttribute="leading" secondItem="sfQ-am-ohX" secondAttribute="leading" id="I7O-Ik-vYj"/>
-                                    <constraint firstItem="0rf-Nd-sTe" firstAttribute="top" secondItem="sfQ-am-ohX" secondAttribute="top" id="JMr-P9-9Va"/>
-                                </constraints>
-                            </view>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5Hs-vR-yvo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="TDO-mN-H5r" firstAttribute="leading" secondItem="5Hs-vR-yvo" secondAttribute="leading" id="3p8-V6-f25"/>
-                            <constraint firstAttribute="bottom" secondItem="TDO-mN-H5r" secondAttribute="bottom" id="B2j-Lz-NWw"/>
-                            <constraint firstItem="sfQ-am-ohX" firstAttribute="trailing" secondItem="rn3-UM-ucR" secondAttribute="trailing" constant="414" id="JnF-8Y-hcV"/>
-                            <constraint firstItem="sfQ-am-ohX" firstAttribute="bottom" secondItem="rn3-UM-ucR" secondAttribute="bottom" constant="852" id="KhC-RV-unE"/>
-                            <constraint firstItem="sfQ-am-ohX" firstAttribute="top" secondItem="rn3-UM-ucR" secondAttribute="top" id="RVh-Xh-7Xk"/>
-                            <constraint firstItem="sfQ-am-ohX" firstAttribute="leading" secondItem="rn3-UM-ucR" secondAttribute="leading" id="UfP-sq-nor"/>
-                            <constraint firstItem="TDO-mN-H5r" firstAttribute="trailing" secondItem="5Hs-vR-yvo" secondAttribute="trailing" id="frR-YN-Dgx"/>
-                            <constraint firstItem="TDO-mN-H5r" firstAttribute="top" secondItem="5Hs-vR-yvo" secondAttribute="top" id="hnC-0P-Lge"/>
-                            <constraint firstItem="sfQ-am-ohX" firstAttribute="width" secondItem="3Ks-7f-fEf" secondAttribute="width" id="wQ8-2M-DMH"/>
+                            <constraint firstItem="zbo-2J-Q8E" firstAttribute="centerY" secondItem="5Hs-vR-yvo" secondAttribute="centerY" id="1IB-v0-ffy"/>
+                            <constraint firstItem="5Hs-vR-yvo" firstAttribute="trailing" secondItem="zbo-2J-Q8E" secondAttribute="trailing" constant="20" id="4OR-fD-755"/>
+                            <constraint firstItem="zbo-2J-Q8E" firstAttribute="leading" secondItem="5Hs-vR-yvo" secondAttribute="leading" constant="20" id="vuv-Jo-oPo"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="mapView" destination="0rf-Nd-sTe" id="oaN-SD-Czc"/>
+                        <outlet property="searchStationButton" destination="TFs-tR-Ob6" id="7ZC-WF-Kfu"/>
+                        <outlet property="searchTrainButton" destination="TLo-9L-eAS" id="Lnm-2S-DfY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="feb-2k-3IL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

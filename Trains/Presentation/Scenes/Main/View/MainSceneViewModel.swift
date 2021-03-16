@@ -7,130 +7,52 @@
 
 import UIKit
 
-typealias GetAllStationsType = (Result<GetAllStationsUseCase.Response, Error>) -> Void
-typealias GetCurrentTrainsType = (Result<GetCurrentTrainsUseCase.Response, Error>) -> Void
-typealias GetStationDataByNameType = (Result<GetStationDataByNameUseCase.Response, Error>) -> Void
-typealias GetStationDataByCodeType = (Result<GetStationDataByCodeUseCase.Response, Error>) -> Void
-typealias GetStationsFilterType = (Result<GetStationsFilterUseCase.Response, Error>) -> Void
-typealias GetTrainsMovementsType = (Result<GetTrainMovementsUseCase.Response, Error>) -> Void
-
 struct MainSceneViewModelCallbacks {
-    let onItemSelected: (_ id: String) -> Void
+    let searchStationDidPress: () -> Void
+    let searchTrainDidPress: () -> Void
 }
 
 protocol MainSceneViewModelable {
     
-    @discardableResult
-    func getAllStations(type: StationType?,
-                        _ completion: @escaping GetAllStationsType) -> NetworkCancellable?
+    func getSceneTitle() -> String
+    func getSearchStationButtonTitle() -> String
+    func getSearchTrainButtonTitle() -> String
     
-    @discardableResult
-    func getCurrentTrains(type: TrainType?,
-                          _ completion: @escaping GetCurrentTrainsType) -> NetworkCancellable?
-    
-    @discardableResult
-    func getStationDataByName(name: String,
-                              minutes: Int?,
-                              _ completion: @escaping GetStationDataByNameType) -> NetworkCancellable?
-    
-    @discardableResult
-    func getStationDataByCode(code: String,
-                              minutes: Int?,
-                              _ completion: @escaping GetStationDataByCodeType) -> NetworkCancellable?
-    
-    @discardableResult
-    func getStationsFilter(filter: String,
-                           _ completion: @escaping GetStationsFilterType) -> NetworkCancellable?
-    
-    @discardableResult
-    func getTrainMovements(id: String,
-                           date: Date,
-                           _ completion: @escaping GetTrainsMovementsType) -> NetworkCancellable?
-    
-    func didSelectItem(_ id: String)
+    func searchStationDidPress()
+    func searchTrainDidPress()
     
 }
 
-class MainSceneViewModel: MainSceneViewModelable, ItemCellViewModelParent {
+class MainSceneViewModel: MainSceneViewModelable, SelectStationCellViewModelParent {
     
     // MARK: - Private Properties
     
     private let callbacks: MainSceneViewModelCallbacks!
-    private let getAllStationsUseCase: GetAllStationsUseCase!
-    private let getCurrentTrainsUseCase: GetCurrentTrainsUseCase!
-    private let getStationDataByNameUseCase: GetStationDataByNameUseCase!
-    private let getStationDataByCodeUseCase: GetStationDataByCodeUseCase!
-    private let getStationsFilterUseCase: GetStationsFilterUseCase!
-    private let getTrainMovementsUseCase: GetTrainMovementsUseCase!
     
     // MARK: - ViewModel Lifecycle
     
-    init(_ callbacks: MainSceneViewModelCallbacks,
-         _ getAllStationsUseCase: GetAllStationsUseCase,
-         _ getCurrentTrainsUseCase: GetCurrentTrainsUseCase,
-         _ getStationDataByNameUseCase: GetStationDataByNameUseCase,
-         _ getStationDataByCodeUseCase: GetStationDataByCodeUseCase,
-         _ getStationsFilterUseCase: GetStationsFilterUseCase,
-         _ getTrainMovementsUseCase: GetTrainMovementsUseCase) {
+    init(_ callbacks: MainSceneViewModelCallbacks) {
         self.callbacks = callbacks
-        self.getAllStationsUseCase = getAllStationsUseCase
-        self.getCurrentTrainsUseCase = getCurrentTrainsUseCase
-        self.getStationDataByNameUseCase = getStationDataByNameUseCase
-        self.getStationDataByCodeUseCase = getStationDataByCodeUseCase
-        self.getStationsFilterUseCase = getStationsFilterUseCase
-        self.getTrainMovementsUseCase = getTrainMovementsUseCase
     }
     
-    // MARK: - Public API -
-    
-    @discardableResult
-    func getAllStations(type: StationType?,
-                        _ completion: @escaping GetAllStationsType) -> NetworkCancellable? {
-        let request = GetAllStationsRequest(type: type)
-        return getAllStationsUseCase.execute(request, completion)
+    func getSceneTitle() -> String {
+        "lstr_main_scene_title".localized()
     }
     
-    @discardableResult
-    func getCurrentTrains(type: TrainType?,
-                          _ completion: @escaping GetCurrentTrainsType) -> NetworkCancellable? {
-        let request = GetCurrentTrainsRequest(type: type)
-        return getCurrentTrainsUseCase.execute(request, completion)
+    func getSearchStationButtonTitle() -> String {
+        "lstr_main_scene_search_for_station".localized()
     }
     
-    @discardableResult
-    func getStationDataByName(name: String,
-                              minutes: Int?,
-                              _ completion: @escaping GetStationDataByNameType) -> NetworkCancellable? {
-        let request = GetStationDataByNameRequest(name: name, minutes: minutes)
-        return getStationDataByNameUseCase.execute(request, completion)
+    func getSearchTrainButtonTitle() -> String {
+        "lstr_main_scene_search_for_train".localized()
     }
     
-    @discardableResult
-    func getStationDataByCode(code: String,
-                              minutes: Int?,
-                              _ completion: @escaping GetStationDataByCodeType) -> NetworkCancellable? {
-        let request = GetStationDataByCodeRequest(code: code, minutes: minutes)
-        return getStationDataByCodeUseCase.execute(request, completion)
+    func searchStationDidPress() {
+        callbacks.searchStationDidPress()
     }
     
-    @discardableResult
-    func getStationsFilter(filter: String,
-                           _ completion: @escaping GetStationsFilterType) -> NetworkCancellable? {
-        let request = GetStationsFilterRequest(filter: filter)
-        return getStationsFilterUseCase.execute(request, completion)
-    }
-    
-    @discardableResult
-    func getTrainMovements(id: String,
-                           date: Date,
-                           _ completion: @escaping GetTrainsMovementsType) -> NetworkCancellable? {
-        let _date = DateFormatter.trainMovementsDateFormatter.string(from: date)
-        let request = GetTrainMovementsRequest(id: id, date: _date)
-        return getTrainMovementsUseCase.execute(request, completion)
-    }
-    
-    func didSelectItem(_ id: String) {
-        callbacks.onItemSelected(id)
+    func searchTrainDidPress() {
+        callbacks.searchTrainDidPress()
     }
     
 }

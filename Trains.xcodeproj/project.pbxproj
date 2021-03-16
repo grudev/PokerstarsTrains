@@ -8,6 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		84F712A996A536C25D4DFEDA /* Pods_Trains.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 249A7518629635AED15627C3 /* Pods_Trains.framework */; };
+		9F1CAC152600FF5C00727BCF /* StationTableViewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1CAC142600FF5C00727BCF /* StationTableViewDataProvider.swift */; };
+		9F1CAC192601005500727BCF /* StationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1CAC182601005500727BCF /* StationCell.swift */; };
+		9F1CAC1D2601006000727BCF /* StationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F1CAC1C2601006000727BCF /* StationCell.xib */; };
+		9F1CAC20260100AB00727BCF /* StationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1CAC1F260100AB00727BCF /* StationCellViewModel.swift */; };
+		9F1CAC24260101A100727BCF /* StationSceneLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1CAC23260101A100727BCF /* StationSceneLayouts.swift */; };
+		9F37017E25F6C3C60004F6FC /* TrainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F37017D25F6C3C50004F6FC /* TrainCell.swift */; };
+		9F37018125F6C44A0004F6FC /* TrainCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F37018025F6C44A0004F6FC /* TrainCellViewModel.swift */; };
+		9F37018425F6C4BD0004F6FC /* TrainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F37018325F6C4BD0004F6FC /* TrainCell.xib */; };
+		9F37018B25F6D6EE0004F6FC /* TrainSceneLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F37018A25F6D6EE0004F6FC /* TrainSceneLayouts.swift */; };
+		9F37019C25F79BF70004F6FC /* TrainDetailsSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F37019B25F79BF60004F6FC /* TrainDetailsSceneViewController.swift */; };
+		9F3701A025F79C080004F6FC /* TrainDetailsSceneViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F37019F25F79C080004F6FC /* TrainDetailsSceneViewController.storyboard */; };
+		9F3701A325F79C180004F6FC /* TrainDetailsSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3701A225F79C180004F6FC /* TrainDetailsSceneViewModel.swift */; };
+		9F3701B425F7AC380004F6FC /* TrainDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3701B325F7AC380004F6FC /* TrainDetailsCell.swift */; };
+		9F3701B825F7AC410004F6FC /* TrainDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F3701B725F7AC410004F6FC /* TrainDetailsCell.xib */; };
+		9F3701BB25F7AC4B0004F6FC /* TrainDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3701BA25F7AC4B0004F6FC /* TrainDetailsViewModel.swift */; };
+		9F3701C125F7B2F50004F6FC /* TrainDetailsSceneDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3701C025F7B2F50004F6FC /* TrainDetailsSceneDataProvider.swift */; };
 		9F57829025EA31E400405E5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F57828F25EA31E400405E5E /* AppDelegate.swift */; };
 		9F57829925EA31EA00405E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F57829825EA31EA00405E5E /* Assets.xcassets */; };
 		9F57829C25EA31EA00405E5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F57829A25EA31EA00405E5E /* LaunchScreen.storyboard */; };
@@ -24,10 +40,7 @@
 		9F8EE58425EABE34005D4FBF /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE58325EABE34005D4FBF /* APIRouter.swift */; };
 		9F8EE58725EABF4B005D4FBF /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE58625EABF4B005D4FBF /* Identifiable.swift */; };
 		9F8EE59025EAC10C005D4FBF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE58F25EAC10C005D4FBF /* Constants.swift */; };
-		9F8EE59325EAC408005D4FBF /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE59225EAC408005D4FBF /* ItemCell.swift */; };
-		9F8EE59625EAC413005D4FBF /* ItemCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE59525EAC413005D4FBF /* ItemCellViewModel.swift */; };
-		9F8EE59925EAC9A0005D4FBF /* MainSceneDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE59825EAC9A0005D4FBF /* MainSceneDataProvider.swift */; };
-		9F8EE59C25EACAAE005D4FBF /* MainSceneLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE59B25EACAAE005D4FBF /* MainSceneLayouts.swift */; };
+		9F8EE59925EAC9A0005D4FBF /* TrainSceneDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE59825EAC9A0005D4FBF /* TrainSceneDataProvider.swift */; };
 		9F8EE5A125ED07B2005D4FBF /* StationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE5A025ED07B2005D4FBF /* StationType.swift */; };
 		9F8EE5A425ED09BA005D4FBF /* TrainType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE5A325ED09BA005D4FBF /* TrainType.swift */; };
 		9F8EE5A725ED1F15005D4FBF /* GetAllStationsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE5A625ED1F15005D4FBF /* GetAllStationsUseCase.swift */; };
@@ -63,13 +76,39 @@
 		9F8EE62125EE9D28005D4FBF /* NibInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE62025EE9D28005D4FBF /* NibInstantiable.swift */; };
 		9F8EE62425EEA0C9005D4FBF /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE62325EEA0C9005D4FBF /* StoryboardInstantiable.swift */; };
 		9F8EE62825EEA0FE005D4FBF /* MainSceneViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F8EE62725EEA0FE005D4FBF /* MainSceneViewController.storyboard */; };
-		9F8EE62B25EEAC12005D4FBF /* MapViewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8EE62A25EEAC12005D4FBF /* MapViewDataProvider.swift */; };
+		9FBDCA8025F0080A00273686 /* SelectStationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBDCA7F25F0080A00273686 /* SelectStationCell.swift */; };
+		9FBDCA8325F0084800273686 /* SelectStationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBDCA8225F0084800273686 /* SelectStationCellViewModel.swift */; };
+		9FBDCA8825F026BF00273686 /* String+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBDCA8725F026BF00273686 /* String+Additions.swift */; };
+		9FBDCA9025F03E9000273686 /* SelectStationCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBDCA8F25F03E9000273686 /* SelectStationCellType.swift */; };
+		9FBDCA9825F0436B00273686 /* StationSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBDCA9725F0436B00273686 /* StationSceneViewController.swift */; };
+		9FBDCA9B25F0437A00273686 /* StationSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBDCA9A25F0437A00273686 /* StationSceneViewModel.swift */; };
+		9FBDCAA025F043A800273686 /* TrainSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBDCA9F25F043A800273686 /* TrainSceneViewController.swift */; };
+		9FBDCAA325F043B300273686 /* TrainSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBDCAA225F043B300273686 /* TrainSceneViewModel.swift */; };
+		9FBDCAA725F0463300273686 /* TrainSceneViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FBDCAA625F0463300273686 /* TrainSceneViewController.storyboard */; };
+		9FBDCAAB25F0469C00273686 /* StationSceneViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FBDCAAA25F0469C00273686 /* StationSceneViewController.storyboard */; };
+		9FBDCAB025F0552300273686 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9FBDCAB225F0552300273686 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		249A7518629635AED15627C3 /* Pods_Trains.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trains.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		631DAE4B44D7DC24B2885A68 /* Pods-Trains.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trains.release.xcconfig"; path = "Target Support Files/Pods-Trains/Pods-Trains.release.xcconfig"; sourceTree = "<group>"; };
 		72F4910E5F7B923AC23659CB /* Pods-Trains.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trains.debug.xcconfig"; path = "Target Support Files/Pods-Trains/Pods-Trains.debug.xcconfig"; sourceTree = "<group>"; };
+		9F1CAC142600FF5C00727BCF /* StationTableViewDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTableViewDataProvider.swift; sourceTree = "<group>"; };
+		9F1CAC182601005500727BCF /* StationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationCell.swift; sourceTree = "<group>"; };
+		9F1CAC1C2601006000727BCF /* StationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StationCell.xib; sourceTree = "<group>"; };
+		9F1CAC1F260100AB00727BCF /* StationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationCellViewModel.swift; sourceTree = "<group>"; };
+		9F1CAC23260101A100727BCF /* StationSceneLayouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationSceneLayouts.swift; sourceTree = "<group>"; };
+		9F37017D25F6C3C50004F6FC /* TrainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainCell.swift; sourceTree = "<group>"; };
+		9F37018025F6C44A0004F6FC /* TrainCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainCellViewModel.swift; sourceTree = "<group>"; };
+		9F37018325F6C4BD0004F6FC /* TrainCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainCell.xib; sourceTree = "<group>"; };
+		9F37018A25F6D6EE0004F6FC /* TrainSceneLayouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainSceneLayouts.swift; sourceTree = "<group>"; };
+		9F37019B25F79BF60004F6FC /* TrainDetailsSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainDetailsSceneViewController.swift; sourceTree = "<group>"; };
+		9F37019F25F79C080004F6FC /* TrainDetailsSceneViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TrainDetailsSceneViewController.storyboard; sourceTree = "<group>"; };
+		9F3701A225F79C180004F6FC /* TrainDetailsSceneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainDetailsSceneViewModel.swift; sourceTree = "<group>"; };
+		9F3701B325F7AC380004F6FC /* TrainDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainDetailsCell.swift; sourceTree = "<group>"; };
+		9F3701B725F7AC410004F6FC /* TrainDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainDetailsCell.xib; sourceTree = "<group>"; };
+		9F3701BA25F7AC4B0004F6FC /* TrainDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainDetailsViewModel.swift; sourceTree = "<group>"; };
+		9F3701C025F7B2F50004F6FC /* TrainDetailsSceneDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainDetailsSceneDataProvider.swift; sourceTree = "<group>"; };
 		9F57828C25EA31E400405E5E /* Trains.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trains.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F57828F25EA31E400405E5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F57829825EA31EA00405E5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,10 +127,7 @@
 		9F8EE58325EABE34005D4FBF /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		9F8EE58625EABF4B005D4FBF /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		9F8EE58F25EAC10C005D4FBF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		9F8EE59225EAC408005D4FBF /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
-		9F8EE59525EAC413005D4FBF /* ItemCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellViewModel.swift; sourceTree = "<group>"; };
-		9F8EE59825EAC9A0005D4FBF /* MainSceneDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneDataProvider.swift; sourceTree = "<group>"; };
-		9F8EE59B25EACAAE005D4FBF /* MainSceneLayouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneLayouts.swift; sourceTree = "<group>"; };
+		9F8EE59825EAC9A0005D4FBF /* TrainSceneDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainSceneDataProvider.swift; sourceTree = "<group>"; };
 		9F8EE5A025ED07B2005D4FBF /* StationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationType.swift; sourceTree = "<group>"; };
 		9F8EE5A325ED09BA005D4FBF /* TrainType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainType.swift; sourceTree = "<group>"; };
 		9F8EE5A625ED1F15005D4FBF /* GetAllStationsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllStationsUseCase.swift; sourceTree = "<group>"; };
@@ -127,7 +163,17 @@
 		9F8EE62025EE9D28005D4FBF /* NibInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibInstantiable.swift; sourceTree = "<group>"; };
 		9F8EE62325EEA0C9005D4FBF /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
 		9F8EE62725EEA0FE005D4FBF /* MainSceneViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainSceneViewController.storyboard; sourceTree = "<group>"; };
-		9F8EE62A25EEAC12005D4FBF /* MapViewDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewDataProvider.swift; sourceTree = "<group>"; };
+		9FBDCA7F25F0080A00273686 /* SelectStationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStationCell.swift; sourceTree = "<group>"; };
+		9FBDCA8225F0084800273686 /* SelectStationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStationCellViewModel.swift; sourceTree = "<group>"; };
+		9FBDCA8725F026BF00273686 /* String+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Additions.swift"; sourceTree = "<group>"; };
+		9FBDCA8F25F03E9000273686 /* SelectStationCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStationCellType.swift; sourceTree = "<group>"; };
+		9FBDCA9725F0436B00273686 /* StationSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationSceneViewController.swift; sourceTree = "<group>"; };
+		9FBDCA9A25F0437A00273686 /* StationSceneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationSceneViewModel.swift; sourceTree = "<group>"; };
+		9FBDCA9F25F043A800273686 /* TrainSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainSceneViewController.swift; sourceTree = "<group>"; };
+		9FBDCAA225F043B300273686 /* TrainSceneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainSceneViewModel.swift; sourceTree = "<group>"; };
+		9FBDCAA625F0463300273686 /* TrainSceneViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TrainSceneViewController.storyboard; sourceTree = "<group>"; };
+		9FBDCAAA25F0469C00273686 /* StationSceneViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StationSceneViewController.storyboard; sourceTree = "<group>"; };
+		9FBDCAB125F0552300273686 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +188,96 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F1CAC172601004A00727BCF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9F1CAC1F260100AB00727BCF /* StationCellViewModel.swift */,
+				9F1CAC182601005500727BCF /* StationCell.swift */,
+				9F1CAC1C2601006000727BCF /* StationCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		9F1CAC222601019500727BCF /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				9F1CAC23260101A100727BCF /* StationSceneLayouts.swift */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
+		9F37017625F654930004F6FC /* DataProviders */ = {
+			isa = PBXGroup;
+			children = (
+				9F8EE59825EAC9A0005D4FBF /* TrainSceneDataProvider.swift */,
+			);
+			path = DataProviders;
+			sourceTree = "<group>";
+		};
+		9F37017C25F6C3B60004F6FC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9F37018025F6C44A0004F6FC /* TrainCellViewModel.swift */,
+				9F37017D25F6C3C50004F6FC /* TrainCell.swift */,
+				9F37018325F6C4BD0004F6FC /* TrainCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		9F37018925F6D6D90004F6FC /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				9F37018A25F6D6EE0004F6FC /* TrainSceneLayouts.swift */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
+		9F37019725F79BC00004F6FC /* TrainDetails */ = {
+			isa = PBXGroup;
+			children = (
+				9F3701BF25F7B2E90004F6FC /* DataProviders */,
+				9F37019825F79BCB0004F6FC /* View */,
+			);
+			path = TrainDetails;
+			sourceTree = "<group>";
+		};
+		9F37019825F79BCB0004F6FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9F3701B225F7AC280004F6FC /* Cells */,
+				9F3701A225F79C180004F6FC /* TrainDetailsSceneViewModel.swift */,
+				9F37019B25F79BF60004F6FC /* TrainDetailsSceneViewController.swift */,
+				9F37019F25F79C080004F6FC /* TrainDetailsSceneViewController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9F3701B225F7AC280004F6FC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9F3701BA25F7AC4B0004F6FC /* TrainDetailsViewModel.swift */,
+				9F3701B325F7AC380004F6FC /* TrainDetailsCell.swift */,
+				9F3701B725F7AC410004F6FC /* TrainDetailsCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		9F3701BF25F7B2E90004F6FC /* DataProviders */ = {
+			isa = PBXGroup;
+			children = (
+				9F3701C025F7B2F50004F6FC /* TrainDetailsSceneDataProvider.swift */,
+			);
+			path = DataProviders;
+			sourceTree = "<group>";
+		};
+		9F3701C425F7D1500004F6FC /* DataProviders */ = {
+			isa = PBXGroup;
+			children = (
+				9F1CAC142600FF5C00727BCF /* StationTableViewDataProvider.swift */,
+			);
+			path = DataProviders;
+			sourceTree = "<group>";
+		};
 		9F57828325EA31E400405E5E = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +355,7 @@
 				9F8EE58625EABF4B005D4FBF /* Identifiable.swift */,
 				9F8EE62025EE9D28005D4FBF /* NibInstantiable.swift */,
 				9F8EE62325EEA0C9005D4FBF /* StoryboardInstantiable.swift */,
+				9FBDCA8725F026BF00273686 /* String+Additions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -234,6 +371,7 @@
 		9F5782AF25EA340C00405E5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9FBDCA8A25F026FF00273686 /* Strings */,
 				9F5782B225EA344700405E5E /* Assets */,
 			);
 			path = Resources;
@@ -260,6 +398,9 @@
 			children = (
 				9F5782B425EA348A00405E5E /* Launch */,
 				9F5782B525EA349800405E5E /* Main */,
+				9FBDCA9425F0432F00273686 /* Train */,
+				9F37019725F79BC00004F6FC /* TrainDetails */,
+				9FBDCA9525F0433800273686 /* Station */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -275,8 +416,6 @@
 		9F5782B525EA349800405E5E /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				9F8EE56925EABB88005D4FBF /* Layouts */,
-				9F8EE56825EABB7F005D4FBF /* DataProviders */,
 				9F8EE56625EABB53005D4FBF /* View */,
 			);
 			path = Main;
@@ -305,27 +444,10 @@
 		9F8EE56725EABB77005D4FBF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				9F8EE59225EAC408005D4FBF /* ItemCell.swift */,
-				9F8EE59525EAC413005D4FBF /* ItemCellViewModel.swift */,
+				9FBDCA7F25F0080A00273686 /* SelectStationCell.swift */,
+				9FBDCA8225F0084800273686 /* SelectStationCellViewModel.swift */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		9F8EE56825EABB7F005D4FBF /* DataProviders */ = {
-			isa = PBXGroup;
-			children = (
-				9F8EE59825EAC9A0005D4FBF /* MainSceneDataProvider.swift */,
-				9F8EE62A25EEAC12005D4FBF /* MapViewDataProvider.swift */,
-			);
-			path = DataProviders;
-			sourceTree = "<group>";
-		};
-		9F8EE56925EABB88005D4FBF /* Layouts */ = {
-			isa = PBXGroup;
-			children = (
-				9F8EE59B25EACAAE005D4FBF /* MainSceneLayouts.swift */,
-			);
-			path = Layouts;
 			sourceTree = "<group>";
 		};
 		9F8EE57025EABCBD005D4FBF /* Entities */ = {
@@ -372,8 +494,8 @@
 		9F8EE57825EABD39005D4FBF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9F8EE5B025ED1FA6005D4FBF /* Station */,
-				9F8EE5B125ED1FBA005D4FBF /* Train */,
+				9FBDCA9225F0405D00273686 /* DTO */,
+				9FBDCA8E25F03E5D00273686 /* UI */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -480,6 +602,73 @@
 			path = Formatters;
 			sourceTree = "<group>";
 		};
+		9FBDCA8A25F026FF00273686 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				9FBDCAB225F0552300273686 /* Localizable.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		9FBDCA8E25F03E5D00273686 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				9FBDCA8F25F03E9000273686 /* SelectStationCellType.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		9FBDCA9225F0405D00273686 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				9F8EE5B025ED1FA6005D4FBF /* Station */,
+				9F8EE5B125ED1FBA005D4FBF /* Train */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		9FBDCA9425F0432F00273686 /* Train */ = {
+			isa = PBXGroup;
+			children = (
+				9F37018925F6D6D90004F6FC /* Layouts */,
+				9F37017625F654930004F6FC /* DataProviders */,
+				9FBDCA9E25F0439600273686 /* View */,
+			);
+			path = Train;
+			sourceTree = "<group>";
+		};
+		9FBDCA9525F0433800273686 /* Station */ = {
+			isa = PBXGroup;
+			children = (
+				9F1CAC222601019500727BCF /* Layouts */,
+				9F3701C425F7D1500004F6FC /* DataProviders */,
+				9FBDCA9625F0435900273686 /* View */,
+			);
+			path = Station;
+			sourceTree = "<group>";
+		};
+		9FBDCA9625F0435900273686 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9F1CAC172601004A00727BCF /* Cells */,
+				9FBDCA9A25F0437A00273686 /* StationSceneViewModel.swift */,
+				9FBDCA9725F0436B00273686 /* StationSceneViewController.swift */,
+				9FBDCAAA25F0469C00273686 /* StationSceneViewController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9FBDCA9E25F0439600273686 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9F37017C25F6C3B60004F6FC /* Cells */,
+				9FBDCAA225F043B300273686 /* TrainSceneViewModel.swift */,
+				9FBDCA9F25F043A800273686 /* TrainSceneViewController.swift */,
+				9FBDCAA625F0463300273686 /* TrainSceneViewController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D84E795F9F4670B07A8423DC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -556,7 +745,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F1CAC1D2601006000727BCF /* StationCell.xib in Resources */,
+				9F37018425F6C4BD0004F6FC /* TrainCell.xib in Resources */,
+				9F3701B825F7AC410004F6FC /* TrainDetailsCell.xib in Resources */,
+				9FBDCAA725F0463300273686 /* TrainSceneViewController.storyboard in Resources */,
+				9F3701A025F79C080004F6FC /* TrainDetailsSceneViewController.storyboard in Resources */,
+				9FBDCAAB25F0469C00273686 /* StationSceneViewController.storyboard in Resources */,
 				9F8EE62825EEA0FE005D4FBF /* MainSceneViewController.storyboard in Resources */,
+				9FBDCAB025F0552300273686 /* Localizable.strings in Resources */,
 				9F57829C25EA31EA00405E5E /* LaunchScreen.storyboard in Resources */,
 				9F57829925EA31EA00405E5E /* Assets.xcassets in Resources */,
 			);
@@ -611,31 +807,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FBDCA8025F0080A00273686 /* SelectStationCell.swift in Sources */,
 				9F8EE56325EABA87005D4FBF /* MainCoordinator.swift in Sources */,
 				9F8EE5C625ED6728005D4FBF /* GetCurrentTrainsUseCase.swift in Sources */,
 				9F8EE5C925ED6755005D4FBF /* GetCurrentTrainsRepository.swift in Sources */,
 				9F8EE60D25EE3A8D005D4FBF /* TrainMovementsCollection.swift in Sources */,
+				9F37018125F6C44A0004F6FC /* TrainCellViewModel.swift in Sources */,
 				9F8EE5F325ED8DAA005D4FBF /* StationDataCollection.swift in Sources */,
+				9F1CAC20260100AB00727BCF /* StationCellViewModel.swift in Sources */,
+				9F3701C125F7B2F50004F6FC /* TrainDetailsSceneDataProvider.swift in Sources */,
+				9F3701BB25F7AC4B0004F6FC /* TrainDetailsViewModel.swift in Sources */,
+				9F1CAC152600FF5C00727BCF /* StationTableViewDataProvider.swift in Sources */,
 				9F8EE58425EABE34005D4FBF /* APIRouter.swift in Sources */,
 				9F8EE5FB25EE3226005D4FBF /* GetStationsFilterRequest.swift in Sources */,
 				9F8EE57325EABCD9005D4FBF /* AppDomainError.swift in Sources */,
 				9F8EE5DE25ED878E005D4FBF /* GetStationDataByCodeUseCase.swift in Sources */,
 				9F8EE56B25EABBC3005D4FBF /* MainSceneViewController.swift in Sources */,
+				9FBDCA8325F0084800273686 /* SelectStationCellViewModel.swift in Sources */,
 				9F8EE56E25EABBDF005D4FBF /* MainSceneViewModel.swift in Sources */,
 				9F8EE60925EE3A56005D4FBF /* GetTrainMovementsUseCase.swift in Sources */,
-				9F8EE62B25EEAC12005D4FBF /* MapViewDataProvider.swift in Sources */,
 				9F8EE5B425ED26B4005D4FBF /* GetAllStationsRepository.swift in Sources */,
-				9F8EE59625EAC413005D4FBF /* ItemCellViewModel.swift in Sources */,
-				9F8EE59325EAC408005D4FBF /* ItemCell.swift in Sources */,
 				9F8EE58025EABDE1005D4FBF /* NetworkManager.swift in Sources */,
 				9F8EE5CD25ED766A005D4FBF /* CurrentTrainsCollection.swift in Sources */,
 				9F8EE5E325ED87EC005D4FBF /* GetStationDataByNameRepository.swift in Sources */,
 				9F8EE5EF25ED891A005D4FBF /* StationData.swift in Sources */,
 				9F8EE60625EE3673005D4FBF /* GetStationsFilterRepository.swift in Sources */,
+				9FBDCAA025F043A800273686 /* TrainSceneViewController.swift in Sources */,
 				9F8EE5A425ED09BA005D4FBF /* TrainType.swift in Sources */,
 				9F8EE5DB25ED8778005D4FBF /* GetStationDataByNameUseCase.swift in Sources */,
 				9F8EE58725EABF4B005D4FBF /* Identifiable.swift in Sources */,
-				9F8EE59C25EACAAE005D4FBF /* MainSceneLayouts.swift in Sources */,
 				9F8EE5E625ED8811005D4FBF /* GetStationDataByCodeRepository.swift in Sources */,
 				9F8EE5E925ED8837005D4FBF /* GetStationDataByNameRequest.swift in Sources */,
 				9F8EE5AD25ED1F98005D4FBF /* Station.swift in Sources */,
@@ -645,25 +845,37 @@
 				9F8EE61425EE6B61005D4FBF /* GetTrainMovementsRequest.swift in Sources */,
 				9F8EE55825EAB9CD005D4FBF /* AppInitialiser.swift in Sources */,
 				9F8EE5A725ED1F15005D4FBF /* GetAllStationsUseCase.swift in Sources */,
+				9F1CAC24260101A100727BCF /* StationSceneLayouts.swift in Sources */,
 				9F8EE5FF25EE33E1005D4FBF /* StationsFilterCollection.swift in Sources */,
+				9FBDCA9025F03E9000273686 /* SelectStationCellType.swift in Sources */,
+				9FBDCA8825F026BF00273686 /* String+Additions.swift in Sources */,
 				9F8EE5C025ED62ED005D4FBF /* GetAllStationsRequest.swift in Sources */,
 				9F8EE61025EE3A9A005D4FBF /* TrainMovements.swift in Sources */,
 				9F8EE5D125ED76BE005D4FBF /* TrainPosition.swift in Sources */,
 				9F8EE61725EE6C41005D4FBF /* GetTrainMovementsRepository.swift in Sources */,
+				9F1CAC192601005500727BCF /* StationCell.swift in Sources */,
+				9F3701B425F7AC380004F6FC /* TrainDetailsCell.swift in Sources */,
+				9F37019C25F79BF70004F6FC /* TrainDetailsSceneViewController.swift in Sources */,
 				9F8EE62425EEA0C9005D4FBF /* StoryboardInstantiable.swift in Sources */,
 				9F8EE57B25EABD7C005D4FBF /* UseCase.swift in Sources */,
 				9F57829025EA31E400405E5E /* AppDelegate.swift in Sources */,
 				9F8EE5EC25ED884E005D4FBF /* GetStationDataByCodeRequest.swift in Sources */,
 				9F8EE55525EAB957005D4FBF /* AppDIContainer.swift in Sources */,
 				9F8EE55B25EAB9EF005D4FBF /* AppTheme.swift in Sources */,
+				9F3701A325F79C180004F6FC /* TrainDetailsSceneViewModel.swift in Sources */,
 				9F8EE61B25EE7BC2005D4FBF /* DateFormatter+DomainFormatters.swift in Sources */,
-				9F8EE59925EAC9A0005D4FBF /* MainSceneDataProvider.swift in Sources */,
+				9FBDCAA325F043B300273686 /* TrainSceneViewModel.swift in Sources */,
+				9F37018B25F6D6EE0004F6FC /* TrainSceneLayouts.swift in Sources */,
+				9F8EE59925EAC9A0005D4FBF /* TrainSceneDataProvider.swift in Sources */,
 				9F8EE5A125ED07B2005D4FBF /* StationType.swift in Sources */,
 				9F8EE5D825ED7D21005D4FBF /* TrainStatus.swift in Sources */,
+				9FBDCA9B25F0437A00273686 /* StationSceneViewModel.swift in Sources */,
+				9FBDCA9825F0436B00273686 /* StationSceneViewController.swift in Sources */,
 				9F8EE5F825EE3204005D4FBF /* GetStationsFilterUseCase.swift in Sources */,
 				9F8EE55F25EABA71005D4FBF /* Coordinatable.swift in Sources */,
 				9F8EE62125EE9D28005D4FBF /* NibInstantiable.swift in Sources */,
 				9F8EE5C325ED66D8005D4FBF /* GetCurrentTrainsRequest.swift in Sources */,
+				9F37017E25F6C3C60004F6FC /* TrainCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,6 +888,14 @@
 				9F57829B25EA31EA00405E5E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9FBDCAB225F0552300273686 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9FBDCAB125F0552300273686 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

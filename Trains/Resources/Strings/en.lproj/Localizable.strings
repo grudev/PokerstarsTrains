@@ -1,0 +1,49 @@
+/* 
+  Localizations.strings
+  Trains
+
+  Created by Dimitar Grudev on 3.03.21.
+  
+*/
+
+"lstr_main_scene_title" = "Irish Rail's";
+"lstr_main_scene_search_for_station" = "Search for Station";
+"lstr_main_scene_search_for_train" = "Search for Train";
+
+"lstr_train_scene_train_type_label" = "Select train type:";
+
+"lstr_train_cell_show_location" = "Show Location";
+"lstr_train_cell_show_status" = "Status";
+"lstr_train_cell_show_message" = "Message";
+"lstr_train_cell_show_direction" = "Direction";
+
+"lstr_train_details_title" = "Train Details";
+
+"lstr_train_status_not_running" = "Not Running";
+"lstr_train_status_running" = "Running";
+"lstr_train_status_other" = "Other";
+
+"lstr_station_scene_title" = "Search for Station";
+"lstr_station_scene_station_type_label" = "Select Station Type:";
+"lstr_station_scene_station_search_type_label" = "Search By:";
+
+"lstr_station_scene_empty_state_title" = "No Results!";
+
+// Common
+
+"lstr_common_train_type_all" = "All";
+"lstr_common_train_type_mainline" = "Mainline";
+"lstr_common_train_type_suburban" = "Suburban";
+"lstr_common_train_type_dart" = "DART";
+
+"lstr_common_station_type_all" = "All";
+"lstr_common_station_type_mainline" = "Mainline";
+"lstr_common_station_type_suburban" = "Suburban";
+"lstr_common_station_type_dart" = "DART";
+
+"lstr_station_search_type_code" = "Code";
+"lstr_station_search_type_name" = "Name";
+"lstr_station_search_type_filter" = "Filter";
+"lstr_station_search_type_type" = "Type";
+
+"lstr_common_search" = "Search";

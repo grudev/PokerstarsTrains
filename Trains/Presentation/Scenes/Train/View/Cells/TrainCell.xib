@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrainCell" id="dr2-9n-8rj" customClass="TrainCell" customModule="Trains" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="428" height="172"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dr2-9n-8rj" id="Z4Z-ZC-7P6">
+                <rect key="frame" x="0.0" y="0.0" width="428" height="172"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZT-Wn-NnE">
+                        <rect key="frame" x="12" y="12" width="276" height="35"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QoU-4k-AFa">
+                        <rect key="frame" x="296" y="12" width="120" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="120" id="n84-h9-g2w"/>
+                            <constraint firstAttribute="height" constant="35" id="nXn-00-7JJ"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="onLocationButtonPressed:" destination="dr2-9n-8rj" eventType="touchUpInside" id="e8Y-GF-tHd"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0e-Gz-Kj7">
+                        <rect key="frame" x="12" y="55" width="404" height="35"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vM-de-nVW">
+                        <rect key="frame" x="12" y="98" width="404" height="62"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+                        <color key="textColor" systemColor="labelColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="9vM-de-nVW" firstAttribute="leading" secondItem="Z4Z-ZC-7P6" secondAttribute="leading" constant="12" id="Arc-Xs-tRP"/>
+                    <constraint firstAttribute="trailing" secondItem="9vM-de-nVW" secondAttribute="trailing" constant="12" id="I9Z-AQ-C3S"/>
+                    <constraint firstItem="QoU-4k-AFa" firstAttribute="top" secondItem="Z4Z-ZC-7P6" secondAttribute="top" constant="12" id="K4q-gf-fxS"/>
+                    <constraint firstItem="QoU-4k-AFa" firstAttribute="leading" secondItem="lZT-Wn-NnE" secondAttribute="trailing" constant="8" id="LQD-0O-reI"/>
+                    <constraint firstAttribute="trailing" secondItem="QoU-4k-AFa" secondAttribute="trailing" constant="12" id="PQN-y9-VuB"/>
+                    <constraint firstAttribute="trailing" secondItem="C0e-Gz-Kj7" secondAttribute="trailing" constant="12" id="Ped-r9-UBn"/>
+                    <constraint firstItem="C0e-Gz-Kj7" firstAttribute="top" secondItem="lZT-Wn-NnE" secondAttribute="bottom" constant="8" id="Ryg-T7-06X"/>
+                    <constraint firstAttribute="bottom" secondItem="9vM-de-nVW" secondAttribute="bottom" constant="12" id="Xx1-WF-67j"/>
+                    <constraint firstItem="lZT-Wn-NnE" firstAttribute="leading" secondItem="Z4Z-ZC-7P6" secondAttribute="leading" constant="12" id="Yiz-ds-Jje"/>
+                    <constraint firstItem="C0e-Gz-Kj7" firstAttribute="height" secondItem="lZT-Wn-NnE" secondAttribute="height" id="ZNb-Mg-uh4"/>
+                    <constraint firstItem="9vM-de-nVW" firstAttribute="top" secondItem="C0e-Gz-Kj7" secondAttribute="bottom" constant="8" id="iCy-WP-tJ3"/>
+                    <constraint firstItem="lZT-Wn-NnE" firstAttribute="height" secondItem="QoU-4k-AFa" secondAttribute="height" id="iPP-Ne-pGx"/>
+                    <constraint firstItem="C0e-Gz-Kj7" firstAttribute="leading" secondItem="Z4Z-ZC-7P6" secondAttribute="leading" constant="12" id="pFf-PB-PrG"/>
+                    <constraint firstItem="lZT-Wn-NnE" firstAttribute="top" secondItem="Z4Z-ZC-7P6" secondAttribute="top" constant="12" id="pXf-xj-knf"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="directionLabel" destination="C0e-Gz-Kj7" id="09V-Xe-S5E"/>
+                <outlet property="locationButton" destination="QoU-4k-AFa" id="Y4E-0Z-k1g"/>
+                <outlet property="messageTextView" destination="9vM-de-nVW" id="mex-uO-j8d"/>
+                <outlet property="statusLabel" destination="lZT-Wn-NnE" id="9Ca-ZO-3fD"/>
+            </connections>
+            <point key="canvasLocation" x="298.55072463768118" y="-35.491071428571423"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

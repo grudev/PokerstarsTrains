@@ -19,21 +19,53 @@ final class AppDIContainer {
 
 extension AppDIContainer: MainCoordinatorDIContainer {
     
+    // MARK: - Main Scene -
+    
     func makeMainSceneViewModel(_ callbacks: MainSceneViewModelCallbacks) -> MainSceneViewModelable {
-        MainSceneViewModel(
-            callbacks,
-            makeGetAllStationsUseCase(),
-            makeGetCurrentTrainsUseCase(),
-            makeGetStationDataByNameUseCase(),
-            makeGetStationDataByCodeUseCase(),
-            makeGetStationsFilterUseCase(),
-            makeGetTrainMovementsUseCase()
-        )
+        MainSceneViewModel(callbacks)
     }
     
     func makeMainSceneViewController(_ viewModel: MainSceneViewModelable) -> MainSceneViewController {
-        return MainSceneViewController.create(with: viewModel,
-                                              styles: AppTheme.makeMainSceneStyles())
+        MainSceneViewController.create(with: viewModel,
+                                       styles: AppTheme.makeMainSceneStyles())
+    }
+    
+    // MARK: - Search Station Scene -
+    
+    func makeStationSceneViewModel(_ callbacks: StationSceneViewModelCallbacks) -> StationSceneViewModelable {
+        StationSceneViewModel(callbacks,
+                              makeGetAllStationsUseCase(),
+                              makeGetStationDataByNameUseCase(),
+                              makeGetStationDataByCodeUseCase(),
+                              makeGetStationsFilterUseCase())
+    }
+    
+    func makeStationSceneViewController(_ viewModel: StationSceneViewModelable) -> StationSceneViewController {
+        StationSceneViewController.create(with: viewModel,
+                                          styles: AppTheme.makeStationSceneStyles())
+    }
+    
+    // MARK: - Search Train Scene -
+    
+    func makeTrainSceneViewModel(_ callbacks: TrainSceneViewModelCallbacks) -> TrainSceneViewModelable {
+        TrainSceneViewModel(callbacks, makeGetCurrentTrainsUseCase())
+    }
+    
+    func makeTrainSceneViewController(_ viewModel: TrainSceneViewModelable) -> TrainSceneViewController {
+        TrainSceneViewController.create(with: viewModel,
+                                        styles: AppTheme.makeTrainSceneStyles())
+    }
+    
+    // MARK: - Train Details Scene -
+    
+    func makeTrainDetailsSceneViewModel(_ id: String,
+                                        _ callbacks: TrainDetailsSceneViewModelCallbacks) -> TrainDetailsSceneViewModelable {
+        TrainDetailsSceneViewModel(id, callbacks, makeGetTrainMovementsUseCase())
+    }
+    
+    func makeTrainDetailsSceneViewController(_ viewModel: TrainDetailsSceneViewModelable) -> TrainDetailsSceneViewController {
+        TrainDetailsSceneViewController.create(with: viewModel,
+                                               styles: AppTheme.makeTrainDetailsSceneStyles())
     }
     
 }

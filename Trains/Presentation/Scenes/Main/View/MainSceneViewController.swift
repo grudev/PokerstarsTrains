@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import MapKit
 
 class MainSceneViewController: UIViewController, StoryboardInstantiable {
     
@@ -22,7 +21,8 @@ class MainSceneViewController: UIViewController, StoryboardInstantiable {
     
     // MARK: - Components -
     
-    @IBOutlet weak private var mapView: MKMapView!
+    @IBOutlet weak private var searchStationButton: UIButton!
+    @IBOutlet weak private var searchTrainButton: UIButton!
     
     // MARK: - Properties -
     
@@ -34,7 +34,20 @@ class MainSceneViewController: UIViewController, StoryboardInstantiable {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        requestStations(for: nil)
+    }
+    
+}
+
+// MARK: - IBActions
+
+extension MainSceneViewController {
+    
+    @IBAction func onSearchStationButtonPressed() {
+        viewModel.searchStationDidPress()
+    }
+    
+    @IBAction func onSearchTrainButtonPressed() {
+        viewModel.searchTrainDidPress()
     }
     
 }
@@ -44,84 +57,29 @@ class MainSceneViewController: UIViewController, StoryboardInstantiable {
 private extension MainSceneViewController {
     
     func setup() {
+        
+        title = viewModel.getSceneTitle()
         view.backgroundColor = styles.backgroundColor
+        
+        searchStationButton.setTitle(
+            viewModel.getSearchStationButtonTitle(),
+            for: .normal
+        )
+        setupButtonStyle(&searchStationButton)
+        
+        searchTrainButton.setTitle(
+            viewModel.getSearchTrainButtonTitle(),
+            for: .normal
+        )
+        setupButtonStyle(&searchTrainButton)
         
     }
     
-    func requestStations(for type: StationType?) {
-        viewModel.getAllStations(type: type) { result in
-            switch result {
-            case .success(let data):
-                print("SUCCESS \(data)")
-            case .failure(let error):
-                print("ERROR \(error)")
-            }
-        }
-    }
-    
-    func requestCurrentTraint(for type: TrainType?) {
-        viewModel.getCurrentTrains(type: type) { result in
-            switch result {
-            case .success(let data):
-                print("SUCCESS \(data)")
-            case .failure(let error):
-                print("ERROR \(error)")
-            }
-        }
-    }
-    
-    func requestStationDataByName(_ name: String, minutes: Int?) {
-        viewModel.getStationDataByName(name: name, minutes: minutes) { (result) in
-            switch result {
-            case .success(let data):
-                print("SUCCESS \(data)")
-            case .failure(let error):
-                print("ERROR \(error)")
-            }
-        }
-    }
-    
-    func requestStationDataByCode(_ code: String, minutes: Int?) {
-        viewModel.getStationDataByCode(code: code, minutes: minutes) { (result) in
-            switch result {
-            case .success(let data):
-                print("SUCCESS \(data)")
-            case .failure(let error):
-                print("ERROR \(error)")
-            }
-        }
-    }
-    
-    func requestStationsFilter(_ filter: String) {
-        viewModel.getStationsFilter(filter: filter) { (result) in
-            switch result {
-            case .success(let data):
-                print("SUCCESS \(data)")
-            case .failure(let error):
-                print("ERROR \(error)")
-            }
-        }
-    }
-    
-    func requestTrainMovements(_ id: String, _ date: Date) {
-        viewModel.getTrainMovements(id: id, date: date) { (result) in
-            switch result {
-            case .success(let data):
-                print("SUCCESS \(data)")
-            case .failure(let error):
-                print("ERROR \(error)")
-            }
-        }
-    }
-    
-}
-
-// MARK: - MainSceneDataProviderDelegate -
-
-extension MainSceneViewController: MainSceneDataProviderDelegate {
-    
-    func didSelectItem(_ id: String) {
-        viewModel.didSelectItem(id)
+    func setupButtonStyle(_ button: inout UIButton) {
+        button.backgroundColor = styles.buttonBackgroundColor
+        button.setTitleColor(styles.buttonTitleColor, for: .normal)
+        button.setTitleColor(styles.buttonTitleColor, for: .highlighted)
+        button.layer.cornerRadius = styles.buttonCornerRadius
     }
     
 }
@@ -130,14 +88,18 @@ extension MainSceneViewController: MainSceneDataProviderDelegate {
 
 protocol MainSceneStylable {
     var backgroundColor: UIColor { get }
-    var cellStyle: ItemCell.StyleSheet { get }
+    var buttonBackgroundColor: UIColor { get }
+    var buttonTitleColor: UIColor { get }
+    var buttonCornerRadius: CGFloat { get }
 }
 
 extension MainSceneViewController {
     
     struct DefaultMainSceneStyles: MainSceneStylable {
         var backgroundColor: UIColor
-        var cellStyle: ItemCell.StyleSheet
+        var buttonBackgroundColor: UIColor
+        var buttonTitleColor: UIColor
+        var buttonCornerRadius: CGFloat
     }
     
 }
